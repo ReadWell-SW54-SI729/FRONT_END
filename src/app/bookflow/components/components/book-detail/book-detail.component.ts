@@ -21,7 +21,6 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class BookDetailComponent implements OnInit{
   bookData: Book;
-  books: Book[] = [];
   constructor(private bookService: BookflowService, private route: ActivatedRoute){
     this.bookData = {} as Book;
   }
@@ -29,26 +28,25 @@ ngOnInit() {
   this.route.paramMap.subscribe(params => {
     const isbn = params.get('id');
     if (isbn) {
-      this.getBooksByIsbn(isbn);
+      this.getBooksByName(isbn);
     } else {
-      console.error('ISBN not found in route parameters.');
+      console.error('Name not found in route parameters.');
     }
   });
-
-
 }
-  getBooksByIsbn(isbn:string){
-    this.bookService.getBooksByIsbn(isbn).subscribe(
+  getBooksByName(isbn: string) {
+    this.bookService.getBooksByName(isbn).subscribe(
       (data: any) => {
         if (data) {
+          console.log('Book data:', data);
           this.bookData = new Book(
-            data.bookIsbn,
-            data.bookTitle,
-            data.bookImage,
-            data.bookDescription,
-            data.bookAuthor,
-            data.bookPublisher,
-            data.amazonBookUrl
+            data[0].bookIsbn,
+            data[0].bookTitle,
+            data[0].bookImage,
+            data[0].bookDescription,
+            data[0].bookAuthor,
+            data[0].bookPublisher,
+            data[0].amazonBookUrl
           );
           console.log('Book details:', this.bookData);
         } else {
@@ -61,4 +59,5 @@ ngOnInit() {
       }
     );
   }
+
 }

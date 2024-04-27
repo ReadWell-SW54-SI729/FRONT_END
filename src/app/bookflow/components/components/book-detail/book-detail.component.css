@@ -13,18 +13,28 @@
 }
 
 .book-info {
+  padding: 80px;
   display: flex;
 }
 
+.book-image {
+  background-color: antiquewhite;
+  padding: 50px;
+  border: 10px solid black;
+  text-align: center;
+}
+
 .book-image img {
-  width: 100%;
+  width: 70%;
   height: 100%;
   object-fit: cover; /* Centra la imagen manteniendo la relación de aspecto */
+  vertical-align: middle;
 }
 
 .book-details-card {
   flex: 2;
   width: 100%;
+  padding: 20px;
 }
 
 .book-details-card mat-card-header {
