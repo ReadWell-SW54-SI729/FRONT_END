@@ -1,0 +1,27 @@
+/* book-card.component.css */
+
+/* Estilos para el contenedor */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Estilos para la tarjeta */
+.book-card {
+  margin: 10px; /* Margen entre tarjetas */
+  width: 300px; /* Ancho de la tarjeta */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Estilos para la imagen de la tarjeta */
+.book-card img {
+  width: 100%; /* Ajustar la imagen al ancho de la tarjeta */
+}
+
+/* Estilos para el título de la tarjeta */
+.mat-card-title {
+  font-size: 1.25rem; /* Tamaño de fuente */
+  font-weight: bold; /* Negrita */
+  margin-top: 10px; /* Margen superior */
+}
