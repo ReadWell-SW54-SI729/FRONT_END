@@ -7,14 +7,17 @@ body {
   font-family: "Josefin Sans";
   margin: 0;
   padding: 0;
+  padding-bottom: 100px;
   box-sizing: border-box;
   background-color: #FFA726;
+  margin-bottom: -50px;
+
 }
 
-/* Estilos de la sección 1 */
-.seccion1 {
+  /* Estilos de la sección 1 */
+.Seccion1 {
   position: relative;
-  height: 650px;
+  min-height: 768px; /* Ajustar la altura mínima al 100% del viewport */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,7 +25,7 @@ body {
   text-align: center;
 }
 
-.seccion1::before {
+.Seccion1::before {
   content: "";
   position: absolute;
   top: 0;
@@ -32,15 +35,24 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg') ;/* Aplicar el gradiente y la imagen de fondo */
   background-size: cover;
   background-position: center;
-  z-index: -1; /* Colocar detrás del contenido */
+  z-index: 0; /* Colocar detrás del contenido */
 }
 
+.bokflow {
+  margin-top: 70px; /* Ajusta este valor según el espacio deseado entre los dos elementos */
+  margin-bottom: 70px;
+  font-size: 3rem;
+}
 
 .slogan {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5rem;
   color: white;
   max-width: 80%;
+  z-index: 1;
+  font-size: 2rem; /* Tamaño de fuente para dispositivos de pantalla grande */
+  margin-bottom: 20px;
+  word-wrap: break-word; /* Permitir saltos de línea cuando el texto no cabe */
+  text-align: center; /* Centrar el texto */
 }
 
 .seccion1 .slogan {
@@ -61,8 +73,43 @@ body {
   .seccion1 .slogan {
     font-size: 1.2rem; /* Tamaño de fuente más pequeño para dispositivos móviles */
   }
-}
+  .Seccion1 img {
+    width: 50%;
+    max-height: 80%;
+    margin: 0 auto;
+  }
+  .tarjeta {
+    width: calc(50% - 20px); /* Ancho del 50% del contenedor menos el espacio entre las tarjetas */
+    margin-bottom: 20px; /* Espacio entre las filas de tarjetas */
+  }
+  .slogan {
+    font-size: 1.5rem; /* Tamaño de fuente más pequeño para dispositivos medianos */
+  }
 
+  .bokflow {
+    font-size: 2.5rem; /* Tamaño de fuente más grande para el título en dispositivos medianos */
+  }
+
+  .comenzar-btn {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para el botón en dispositivos medianos */
+  }
+}
+@media screen and (max-width: 480px) {
+  .tarjeta {
+    width: calc(100% - 20px); /* Ancho del 100% del contenedor menos el espacio entre las tarjetas */
+  }
+  .slogan {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para dispositivos pequeños */
+  }
+
+  .bokflow {
+    font-size: 2rem; /* Tamaño de fuente más grande para el título en dispositivos pequeños */
+  }
+
+  .comenzar-btn {
+    font-size: 1rem; /* Tamaño de fuente más pequeño para el botón en dispositivos pequeños */
+  }
+}
 
 
 .slogan .highlight {
@@ -72,11 +119,14 @@ body {
   color: #ffbc5e;
   display: block;
   font-style: normal; /* Evitar que herede el estilo cursiva */
-
+  word-wrap: break-word; /* Permitir saltos de línea cuando el texto no cabe */
+  margin-bottom: 20px;
 
 }
 
 .highlight {
+  word-wrap: break-word; /* Permitir saltos de línea cuando el texto no cabe */
+
   text-shadow: 0 0 15px rgb(0, 0, 0);
 }
 
@@ -113,8 +163,8 @@ body {
 .comenzar-btn {
   background-color: #ff9900;
   color: white;
-  padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
-  font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+ /* padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
+ /* font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
   border: none; /* Eliminar los bordes */
   border-radius: 5px;
   cursor: pointer;
@@ -122,6 +172,8 @@ body {
   margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregar sombra para el efecto 3D */
   animation: buttonMovement 3s infinite; /* Aplicar la animación */
+  font-size: 1.5rem; /* Tamaño de fuente para el botón */
+  padding: 10px 20px;
 }
 
 .comenzar-btn:hover {
@@ -203,12 +255,13 @@ body {
 
 .tarjetas-container {
   display: flex;
-  overflow-x: auto;
-  white-space: nowrap;
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en filas */
+  justify-content: center;
 }
 
 .tarjeta {
-  margin-right: 10px;
+  width: 300px; /* Ancho fijo para las tarjetas */
+  margin-right: 20px; /* Espacio entre las tarjetas */
 }
 
 .book-card {
