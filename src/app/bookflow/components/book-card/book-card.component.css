@@ -1,18 +1,27 @@
 /* book-card.component.css */
 
+
 /* Estilos para el contenedor */
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
 }
 
 /* Estilos para la tarjeta */
 .book-card {
-  margin: 10px; /* Margen entre tarjetas */
-  width: 300px; /* Ancho de la tarjeta */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  margin: 35px; /* Margen entre tarjetas */
+  width: 200px; /* Ancho de la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hacer la sombra más notoria */
+  transition: transform 0.3s ease; /* Agregar transición para el efecto de agrandamiento */
+  background-color: #ffe3e3; /* Color de fondo nuevo */
+
+}
+
+/* Efecto de agrandamiento al seleccionar la tarjeta */
+.book-card:hover {
+  transform: scale(1.05); /* Agrandar la tarjeta */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Hacer la sombra aún más notoria */
 }
 
 /* Estilos para la imagen de la tarjeta */
@@ -22,7 +31,9 @@
 
 /* Estilos para el título de la tarjeta */
 .mat-card-title {
-  font-size: 1.25rem; /* Tamaño de fuente */
+  font-size: 1rem; /* Tamaño de fuente reducido */
   font-weight: bold; /* Negrita */
-  margin-top: 10px; /* Margen superior */
+  margin-top: 5px; /* Margen superior reducido */
 }
+
+
