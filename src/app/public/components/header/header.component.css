@@ -39,11 +39,13 @@ button:hover {
 nav {
   display: flex;
   align-items: center;
+  margin-left: 30rem;
+
 }
 
 
 nav a {
-  margin-right: 1rem;
+  margin-right: 3rem;
 }
 
 nav a:hover {
