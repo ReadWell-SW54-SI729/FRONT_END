@@ -3,11 +3,10 @@ mat-toolbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem;
   background-color: #f2f2f2;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 a {
   text-decoration: none;
   color: #333;
@@ -26,6 +25,7 @@ button:hover {
   background-color: #928f8f;
 }
 
+
 .logo {
   display: flex;
   align-items: center;
@@ -39,20 +39,19 @@ button:hover {
 nav {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  margin-left: 35rem;
+
 }
+
 
 nav a {
-  margin-right: 1rem; /* Cambiado para reducir el espacio entre enlaces */
-}
-
-nav a:last-child {
-  margin-right: 0; /* Eliminar margen derecho del último enlace */
+  margin-right: 2rem;
 }
 
 nav a:hover {
   color: #FFA726; /* Cambiar el color del texto al señalar con el cursor */
 }
+
 
 .buttom {
   display: flex;
@@ -64,18 +63,15 @@ nav a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  nav {
-    display: none; /* Ocultar todos los enlaces del menú en dispositivos pequeños */
+  nav a {
+    display: none; /* Ocultar todos los enlaces del menú */
   }
 
   .buttom {
-    margin-left: auto; /* Mover el botón a la derecha en dispositivos pequeños */
-  }
-
-  .logo {
-    margin-left: 1rem; /* Añadir margen izquierdo al logo en dispositivos pequeños */
+    display: flex; /* Mostrar el contenedor de ÚNETE AQUÍ */
   }
 }
+
 
 /* Estilos del botón ÚNETE AQUÍ */
 .button-link {
