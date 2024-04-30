@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f7f7f7; /* Fondo gris claro */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg'); /* Ajusta la ruta según sea necesario */
+  background-position: center; /* Centra la imagen en la página */
 }
 
 .book-card {
