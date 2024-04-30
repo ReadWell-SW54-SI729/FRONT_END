@@ -1,0 +1,83 @@
+<div>
+  <body>
+  <div id="seccion1" class="seccion1">
+    <p class="slogan">
+      <span class="highlight">Enciende tu pasión por la lectura con</span>
+      <span class="bokflow">BookFlow</span>
+      <br>
+      <br>
+      "Donde la tecnología y las palabras se fusionan para inspirar, educar y entretener."
+    </p>
+    <br>
+    <button class="comenzar-btn">COMENZAR</button>
+  </div>
+
+  <section class="integrantes" id="integrantes">
+    <div class="contenedor1">
+      <h2 class="titulo">¿Quiénes somos?</h2>
+      <p class="caja-texto">Somos un Startup que busca inspirar y enriquecer la vida de las personas a través de la lectura. Buscamos brindar acceso conveniente a una amplia variedad de contenidos literarios mientras apoyamos a autores emergentes y conectamos a los lectores con experiencias que enriquecen su amor por los libros.</p>
+      <br>
+      <br>
+    </div>
+
+    <!-- Imágenes de los participantes -->
+    <div class="imagenes-participantes">
+      <img src="./assets/imagen-hernan.png" alt="Foto1" width="140" height="150">
+      <img src="./assets/imagen-joaquin.png" alt="Foto2" width="140" height="150">
+      <img src="./assets/imagen-miguel.png" alt="Foto3" width="140" height="150">
+      <img src="./assets/imagen-paolo.png" alt="Foto4" width="140" height="150">
+      <img src="./assets/imagen-franz.png" alt="Foto5" width="140" height="150">
+      <img src="./assets/imagen-victor.png" alt="Foto6" width="140" height="150">
+    </div>
+
+  </section>
+  <section class="Catalogo" id="catalogo">
+    <div class="contenedor1">
+      <div class="titulo">
+        <div class="texto">
+          <input type="button" value="LO MÁS VENDIDO" class="btn1">
+        </div>
+      </div>
+      <div class="imagenes">
+        <div class="tarjetas-container">
+          <div *ngFor="let book of libros" class="tarjeta book-card" (click)="getDetails(book)">
+            <img [src]="book.img" alt="Imagen del libro" class="book-card-img">
+            <div class="descripcion">
+              <h3 class="mat-card-title">{{ book.name }}</h3>
+              <!-- Otros detalles del libro si es necesario -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <button mat-button color="primary" (click)="goCatalogue()" class="custom-button">Ver más</button>
+    </div>
+    <br>
+    <br>
+  </section>
+
+
+  <!-- Formulario -->
+  <section class="formulario-contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <form action="https://formsubmit.co/BookFlow@upc.edu.pe" method="POST">
+      <div class="input-group">
+
+        <p>¡Queremos saber tu opinión! Telf.</p>
+        <p> (01) 6400033 Lima, Perú</p>
+        <div class="imagenes-redes">
+          <img src="./assets/logo-twitter.png" alt="logo-twiter" width="60px" height="57px">
+          <img src="./assets/logo-facebook.png" alt="logo-facebook" width="60px" height="57px">
+          <img src="./assets/logo-instagram.png" alt="logo-instagram" width="60px" height="57px">
+        </div>
+        <input type="text" name="name" id="name" placeholder="Nombre">
+        <input type="email" name="email" id="email" placeholder="E-mail">
+        <input type="text" name="asunto" id="asunto" placeholder="Asunto">
+        <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje"></textarea>
+        <input class="btn" type="submit" value="Enviar">
+      </div>
+    </form>
+  </section>
+
+  </body>
+
+</div>

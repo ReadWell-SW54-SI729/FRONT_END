@@ -1,9 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader, MatCardImage, MatCardTitle} from "@angular/material/card";
 import {NgForOf} from "@angular/common";
-import {Book} from "../../../model/book.model";
-import {BookflowService} from "../../../services/bookflow-service.service";
+import {Book} from "../../model/book.model";
+import {BookflowService} from "../../services/bookflow-service.service";
 import {ActivatedRoute} from "@angular/router";
+import {MatButton} from "@angular/material/button";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-book-detail',
@@ -14,14 +16,15 @@ import {ActivatedRoute} from "@angular/router";
     MatCardImage,
     MatCardTitle,
     NgForOf,
-    MatCardContent
+    MatCardContent,
+    MatButton
   ],
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.css'
 })
 export class BookDetailComponent implements OnInit{
   bookData: Book;
-  constructor(private bookService: BookflowService, private route: ActivatedRoute){
+  constructor(private bookService: BookflowService, private route: ActivatedRoute,private router: Router){
     this.bookData = {} as Book;
   }
 ngOnInit() {
@@ -48,6 +51,7 @@ ngOnInit() {
             data[0].bookPublisher,
             data[0].amazonBookUrl
           );
+          let name = data[0].bookTitle;
           console.log('Book details:', this.bookData);
         } else {
           console.error('No book data found for ISBN:', isbn);
@@ -59,5 +63,14 @@ ngOnInit() {
       }
     );
   }
-
+  agregarComentario(){
+    this.route.paramMap.subscribe(params => {
+      const isbn = params.get('id');
+      if (isbn) {
+        this.router.navigateByUrl(`Catalogue/bookDetail/${isbn}/Comment`);
+      } else {
+        console.error('Name not found in route parameters.');
+      }
+    });
+  }
 }

@@ -7,5 +7,5 @@ import {provideHttpClient, withFetch} from "@angular/common/http";
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(),
-  provideHttpClient(withFetch()), provideAnimationsAsync()]
+  provideHttpClient(withFetch()), provideAnimationsAsync(), provideAnimationsAsync()]
 };

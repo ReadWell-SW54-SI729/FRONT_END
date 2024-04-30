@@ -1,0 +1,44 @@
+.comment-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra todo verticalmente */
+  padding: 20px;
+  position: relative;
+}
+
+.comment-info {
+  text-decoration: underline;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.book,
+.review {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+.bars input[type="book-bar"],
+.bars input[type="review-bar"] {
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  width: 400px;
+}
+
+.bars input[type="review-bar"] {
+  height: 200px;
+}
+
+.icon-button {
+  margin-top: 20px;
+}

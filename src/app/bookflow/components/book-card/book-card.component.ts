@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Book} from "../../../model/book.model";
-import {BookflowService} from "../../../services/bookflow-service.service";
+import {Component,  OnInit} from '@angular/core';
+import {Book} from "../../model/book.model";
+import {BookflowService} from "../../services/bookflow-service.service";
 import {MatCardModule} from "@angular/material/card";
 import {MatFormField} from "@angular/material/form-field";
 import {NgForOf} from "@angular/common";
 import {Router} from "@angular/router";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-book-card',
@@ -13,6 +14,7 @@ import {Router} from "@angular/router";
     MatCardModule,
     MatFormField,
     NgForOf,
+    MatButton,
   ],
   templateUrl: './book-card.component.html',
   styleUrl: './book-card.component.css'
@@ -58,7 +60,6 @@ export class BookCardComponent implements OnInit{
   }
   getDetails(book: any) {
     console.log('Book details:', book.id);
-    this.router.navigateByUrl(`/bookDetail/${book.id}`);
+    this.router.navigateByUrl(`Catalogue/bookDetail/${book.id}`);
   }
-
 }

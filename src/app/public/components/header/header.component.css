@@ -1,0 +1,99 @@
+/* Estilos de la cabecera */
+mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f2f2f2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+button {
+  background-color: #FFB74B;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #928f8f;
+}
+
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+
+nav a {
+  margin-right: 1rem;
+}
+
+nav a:hover {
+  color: #FFA726; /* Cambiar el color del texto al señalar con el cursor */
+}
+
+
+.buttom {
+  display: flex;
+  align-items: center;
+}
+
+.buttom button {
+  margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  nav a {
+    display: none; /* Ocultar todos los enlaces del menú */
+  }
+
+  .buttom {
+    display: flex; /* Mostrar el contenedor de ÚNETE AQUÍ */
+  }
+}
+
+
+/* Estilos del botón ÚNETE AQUÍ */
+.button-link {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  padding: 0.5rem 1rem; /* Ajuste de espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado */
+  border: none; /* Quitar borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
+}
+
+.button-link:hover {
+  background-color: #ffe8e8; /* Cambio de color al pasar el mouse */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Aumentar la sombra al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* CSS restante */
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
