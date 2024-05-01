@@ -1,72 +1,58 @@
-.comment-information {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra todo verticalmente */
-  padding: 20px;
-  position: relative;
+.container-wrapper {
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 15px;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 0 auto; /* Centrar horizontalmente */
+  margin-top: 100px; /* Margen superior */
+  margin-block: 100px;
 }
 
-@keyframes shine {
-  0% { text-shadow: 0 0 5px #ffaa00; }
-  50% { text-shadow: 0 0 15px #ffaa00; }
-  100% { text-shadow: 0 0 5px #ffaa00; }
+.comment-information,
+.book,
+.review,
+.bars,
+.icon-button {
+  width: 100%;
+  color: #333333; /* Color de texto */
+  margin: 0 auto; /* Centrar horizontalmente */
 }
 
 .comment-info {
-  text-decoration: underline;
-  font-size: 20px;
+  font-size: 24px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
   margin-bottom: 20px;
-  color: #ffffff;
-  animation: shine 2s infinite; /* Efecto de brillo naranja que aumenta */
+  animation: shine 2s infinite;
 }
-
 
 .book,
 .review {
-  font-size: 15px;
-  margin-bottom: 10px;
-  color: #f2f2f2;
-  display: flex;
-  align-items: center; /* Centra verticalmente */
-  justify-content: center; /* Centra horizontalmente */
-}
-
-
-
-.bars {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
+  font-size: 18px;
 }
 
 .bars input[type="book-bar"],
 .bars input[type="review-bar"] {
-  padding: 10px;
-  font-size: 18px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  width: 400px;
-}
-
-.bars input[type="review-bar"] {
-  height: 200px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 .icon-button {
   margin-top: 20px;
-  background-color: #FF9900; /* Color naranja */
-  color: #FFFFFF; /* Letra blanca */
-  padding: 10px 30px; /* Espaciado interno */
-  border: none; /* Sin borde */
-  border-radius: 10px; /* Borde redondeado */
-  cursor: pointer; /* Cursor de puntero */
-  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
-  /* Efecto de botón 3D */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #FF9900;
+  color: #FFFFFF;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .icon-button:hover {
-  background-color: #ff6a00; /* Cambio de color al pasar el ratón */
-  /* Efecto de botón 3D hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 20px rgba(0, 0, 0, 0.16);
+  background-color: #ff6a00;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
