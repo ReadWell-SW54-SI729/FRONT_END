@@ -36,6 +36,7 @@ export class BookTendenciaComponent implements OnInit {
           this.libros = filteredBooks.map((book: any) => new Book(
             book.bookIsbn,
             book.bookTitle,
+            book.bookGenre,
             book.bookImage,
             book.bookDescription,
             book.bookAuthor,

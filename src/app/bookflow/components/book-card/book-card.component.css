@@ -12,6 +12,20 @@
   margin-bottom: 30px; /* Mover hacia abajo */
 }
 
+/* Estilos para los botones de filtro */
+.filter {
+  margin-right: 10px; /* Espacio entre botones */
+  background-color: #007bff; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cursor al pasar */
+  transition: background-color 0.3s; /* Transición suave del color de fondo */
+}
+
+.filter:hover {
+  background-color: #0056b3; /* Color de fondo al pasar el ratón */
+}
 
 
 

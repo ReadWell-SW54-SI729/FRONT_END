@@ -42,6 +42,7 @@ export class BookHomeComponent implements OnInit {
             return new Book(
               book.bookIsbn,
               book.bookTitle,
+              book.bookGenre,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,

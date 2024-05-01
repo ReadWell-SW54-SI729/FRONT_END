@@ -17,9 +17,22 @@ export class  BookflowService {
     );
   }
 
-  getBooksByName(isbn:string){
+  getBooksByIsbn(isbn:string){
 
     return this.Http.get<any>(`${this.baseUrl}?bookIsbn=${isbn}`).pipe(
+      tap((response) => console.log('API Response:', response))
+    );
+  }
+
+  getBooksByGenre(genre:string){
+
+      return this.Http.get<any>(`${this.baseUrl}?bookGenre=${genre}`).pipe(
+        tap((response) => console.log('API Response:', response))
+      );
+  }
+
+  getBooksByName(name:string){
+    return this.Http.get<any>(`${this.baseUrl}?bookTitle=${name}`).pipe(
       tap((response) => console.log('API Response:', response))
     );
   }

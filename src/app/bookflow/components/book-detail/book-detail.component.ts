@@ -31,20 +31,21 @@ ngOnInit() {
   this.route.paramMap.subscribe(params => {
     const isbn = params.get('id');
     if (isbn) {
-      this.getBooksByName(isbn);
+      this.getBooksByIsbn(isbn);
     } else {
       console.error('Name not found in route parameters.');
     }
   });
 }
-  getBooksByName(isbn: string) {
-    this.bookService.getBooksByName(isbn).subscribe(
+  getBooksByIsbn(isbn: string) {
+    this.bookService.getBooksByIsbn(isbn).subscribe(
       (data: any) => {
         if (data) {
           console.log('Book data:', data);
           this.bookData = new Book(
             data[0].bookIsbn,
             data[0].bookTitle,
+            data[0].bookGenre,
             data[0].bookImage,
             data[0].bookDescription,
             data[0].bookAuthor,
