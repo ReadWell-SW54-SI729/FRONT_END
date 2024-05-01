@@ -228,7 +228,7 @@ body {
 }
 
 .mat-card-title {
-  font-size: 1.25rem;
+  font-size: 1.20rem;
   font-weight: bold;
   margin-top: 10px;
   color: #f7f7f7;
@@ -240,12 +240,24 @@ body {
 }
 
 .custom-button {
-  margin-right: 10px; /* Espacio a la derecha para separar del contenido siguiente */
-  width: fit-content; /* Ajustar el ancho al contenido */
-  font-size: 16px; /* Tamaño de fuente */
-  padding: 10px 20px; /* Espaciado interno */
-  background-color: black;
+  margin-right: 10px;
+  width: fit-content;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #f18900; /* Color naranja */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
 }
+
+.custom-button:hover {
+  transform: translateY(-3px); /* Mover hacia arriba al pasar el ratón */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
 
 .contenedor2 {
   display: flex;
