@@ -1,0 +1,48 @@
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 90px; /* Mismo margen izquierdo que #catalogo */
+  margin-right: 50px; /* Mismo margen derecho que #catalogo */
+  margin-top: 50px; /* Mismo margen superior que #catalogo */
+  margin-bottom: 30px; /* Mismo margen inferior que #catalogo */
+}
+
+.tarjeta-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tarjeta {
+  margin: 35px; /* Margen entre tarjetas */
+  width: 200px; /* Ancho de la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hacer la sombra más notoria */
+  transition: transform 0.3s ease; /* Agregar transición para el efecto de agrandamiento */
+  background-color: #ffe3e3; /* Color de fondo nuevo */
+}
+
+/* Efecto de agrandamiento al seleccionar la tarjeta */
+.tarjeta:hover {
+  transform: scale(1.05); /* Agrandar la tarjeta */
+  box-shadow: 0 12px 24px rgb(255, 19, 19); /* Hacer la sombra aún más notoria */
+}
+
+.book-card-img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% de la tarjeta */
+  height: auto; /* Altura automática */
+}
+
+.descripcion {
+  padding: 10px; /* Espacio interno */
+}
+
+.mat-card-title {
+  font-size: 1rem; /* Tamaño del título */
+  font-weight: bold; /* Peso de la fuente */
+  margin-top: 5px; /* Margen superior */
+}
+
+.custom-button {
+  margin-top: 20px; /* Espacio superior */
+}

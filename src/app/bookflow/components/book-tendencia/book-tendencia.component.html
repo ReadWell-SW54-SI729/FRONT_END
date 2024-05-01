@@ -1,0 +1,15 @@
+<div class="imagenes">
+  <div class="tarjetas-container">
+    <div class="tarjeta-container" *ngFor="let book of libros">
+      <div class="tarjeta book-card" (click)="getDetails(book)">
+        <img [src]="book.img" alt="Imagen del libro" class="book-card-img">
+        <div class="descripcion">
+          <h3 class="mat-card-title">{{ book.name }}</h3>
+          <!-- Otros detalles del libro si es necesario -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<BR>
+<button mat-button color="primary" (click)="goCatalogue()" class="custom-button">Ver más</button>
