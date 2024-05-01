@@ -21,7 +21,7 @@
 /* Efecto de agrandamiento al seleccionar la tarjeta */
 .book-card:hover {
   transform: scale(1.05); /* Agrandar la tarjeta */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* Hacer la sombra aún más notoria */
+  box-shadow: 0 12px 24px rgb(255, 19, 19); /* Hacer la sombra aún más notoria */
 }
 
 /* Estilos para la imagen de la tarjeta */

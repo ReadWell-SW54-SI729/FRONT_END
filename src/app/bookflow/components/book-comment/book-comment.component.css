@@ -6,19 +6,32 @@
   position: relative;
 }
 
+@keyframes shine {
+  0% { text-shadow: 0 0 5px #ffaa00; }
+  50% { text-shadow: 0 0 15px #ffaa00; }
+  100% { text-shadow: 0 0 5px #ffaa00; }
+}
+
 .comment-info {
   text-decoration: underline;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  animation: shine 2s infinite; /* Efecto de brillo naranja que aumenta */
 }
+
 
 .book,
 .review {
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 15px;
   margin-bottom: 10px;
+  color: #f2f2f2;
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  justify-content: center; /* Centra horizontalmente */
 }
+
+
 
 .bars {
   display: flex;
@@ -30,7 +43,7 @@
 .bars input[type="review-bar"] {
   padding: 10px;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 10px;
   width: 400px;
 }
@@ -41,4 +54,19 @@
 
 .icon-button {
   margin-top: 20px;
+  background-color: #FF9900; /* Color naranja */
+  color: #FFFFFF; /* Letra blanca */
+  padding: 10px 30px; /* Espaciado interno */
+  border: none; /* Sin borde */
+  border-radius: 10px; /* Borde redondeado */
+  cursor: pointer; /* Cursor de puntero */
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  /* Efecto de botón 3D */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.icon-button:hover {
+  background-color: #ff6a00; /* Cambio de color al pasar el ratón */
+  /* Efecto de botón 3D hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.23), 0 10px 20px rgba(0, 0, 0, 0.16);
 }
