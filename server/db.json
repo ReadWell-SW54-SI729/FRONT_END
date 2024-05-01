@@ -2290,5 +2290,19 @@
         "bookIsbn": "0593481518",
         "bookRank": 10
       }
+  ],
+
+
+  "audioBooks": [
+    {
+      "audioTitle": "THE SCARLET SHEDDER",
+      "audioImage": "https://storage.googleapis.com/du-prd/books/images/9781338896435.jpg",
+      "audioDescription": "The 12th book in the",
+      "audioAuthor": "Dav Pilkey",
+      "audioPublisher": "Scholastic",
+      "amazonAudioUrl": "https://www.amazon.com/dp/1338896431?tag=thenewyorktim-20",
+      "audioIsbn": "1338896431",
+      "audioRank": 1
+    }
   ]
 }
