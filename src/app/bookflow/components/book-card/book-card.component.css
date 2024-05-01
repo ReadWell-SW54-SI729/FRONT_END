@@ -1,3 +1,20 @@
+
+#catalogo {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  display: block;
+  font-style: normal;
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+  margin-left: 90px; /* Mover hacia la derecha */
+  margin-right: 50px; /* Mover hacia la izquierda */
+  margin-top: 50px; /* Mover hacia arriba */
+  margin-bottom: 30px; /* Mover hacia abajo */
+}
+
+
+
+
 /* book-card.component.css */
 
 

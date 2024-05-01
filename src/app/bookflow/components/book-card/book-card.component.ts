@@ -63,4 +63,6 @@ export class BookCardComponent implements OnInit{
     console.log('Book details:', book.id);
     this.router.navigateByUrl(`Catalogue/bookDetail/${book.id}`);
   }
+
+
 }

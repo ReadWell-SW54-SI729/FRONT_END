@@ -5,12 +5,14 @@ import {BookHomeComponent} from "./bookflow/components/book-home/book-home.compo
 import {BookCommentComponent} from "./bookflow/components/book-comment/book-comment.component";
 import {IniciosesionComponent} from "./bookflow/components/book-iniciosesion/iniciosesion/iniciosesion.component";
 import {RegistroComponent} from "./bookflow/components/book-registro/registro/registro.component";
+import {BookTendenciaComponent} from "./bookflow/components/book-tendencia/book-tendencia.component";
 
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
   {path : 'home/Catalogue', component: BookCardComponent},
   {path : 'home/iniciosesion', component: IniciosesionComponent},
   {path : 'home/registro', component: RegistroComponent},
+  {path : 'home/tendencia', component: BookTendenciaComponent},
   {path: 'Catalogue/bookDetail/:id', component: BookDetailComponent },
   {path: 'Catalogue/bookDetail/:id/Comment', component: BookCommentComponent },
   {path : '', redirectTo: 'home', pathMatch: 'full'},
