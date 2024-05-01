@@ -45,6 +45,7 @@ export class BookHomeComponent implements OnInit {
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
+              book.bookAuthorImage,
               book.bookPublisher,
               book.amazonBookUrl
             );

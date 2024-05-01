@@ -48,6 +48,7 @@ ngOnInit() {
             data[0].bookImage,
             data[0].bookDescription,
             data[0].bookAuthor,
+            data[0].bookAuthorImage,
             data[0].bookPublisher,
             data[0].amazonBookUrl
           );
