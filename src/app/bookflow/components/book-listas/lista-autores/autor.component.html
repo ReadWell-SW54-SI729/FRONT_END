@@ -1,0 +1,38 @@
+<div class="autor-container">
+  <div class="titulo-container">
+    <div class="titulo mat-elevation-z2">Seguir Autores</div>
+  </div>
+
+  <!-- Lista 1 -->
+  <div class="lista-container">
+    <div class="lista-titulo"></div>
+    <div class="lista-autores">
+      <mat-card *ngFor="let book of books | slice:0:14">
+        <div class="autor">
+            <img [src]="book.authorImage" alt="Autor">
+          <div class="autor-nombre">{{book.author}}</div>
+          <div class="autor-descripcion">{{book.description}}</div>
+          <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <!-- Lista 2 -->
+  <div class="lista-container">
+    <div class="lista-titulo"></div>
+    <div class="lista-autores">
+      <mat-card *ngFor="let book of books | slice:14:28">
+        <div class="autor">
+          <img [src]="book.authorImage" alt="Autor">
+          <div class="autor-nombre">{{book.author}}</div>
+          <div class="autor-descripcion">{{book.description}}</div>
+          <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
+        </div>
+      </mat-card>
+
+
+    </div>
+  </div>
+</div>

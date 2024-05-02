@@ -1,0 +1,94 @@
+/* Estilos generales del contenedor principal */
+.lectura-container {
+  justify-content: center;
+  background-image: url(/assets/fondo1.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Estilos del título redondeado */
+.titulo-container {
+  margin-bottom: 20px;
+}
+
+.titulo {
+  background-color: #FFD54F;
+  color: white;
+  font-size: 28px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* Estilos de las listas */
+.lista-container {
+  margin-bottom: 40px;
+}
+
+.lista-titulo {
+  background-color: #FFD54F;
+  color: white;
+  font-size: 25px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* Estilos de los libros */
+.lista-libros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.libro {
+  width: 200px;
+  text-align: center;
+}
+
+.libro img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.libro-nombre {
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+.libro-description {
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+/*.ver-button {
+  background-color: #08cd19;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}*/
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .libro {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .libro {
+    width: 120px;
+  }
+}

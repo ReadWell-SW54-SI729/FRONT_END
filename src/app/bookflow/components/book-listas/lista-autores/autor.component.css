@@ -1,0 +1,88 @@
+/* Estilos generales del contenedor principal */
+.autor-container {
+  justify-content: center;
+  background-image: url(/assets/fondo1.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+
+.titulo-container {
+  margin-bottom: 20px;
+}
+
+.titulo {
+  background-color: #FFD54F;
+  color: white;
+  font-size: 28px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* Estilos de las listas */
+.lista-container {
+  margin-bottom: 40px;
+}
+
+.lista-titulo {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Estilos de los libros */
+.lista-autores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.autor {
+  width: 200px;
+  text-align: center;
+}
+
+.autor img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.autor-nombre {
+  font-size: larger;
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+.seguir-button {
+  background-color: #2555ac;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .autor {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .autor {
+    width: 120px;
+  }
+}
+

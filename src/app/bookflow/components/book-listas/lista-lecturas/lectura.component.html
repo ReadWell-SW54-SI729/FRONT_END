@@ -1,0 +1,34 @@
+<div class="lectura-container">
+  <div class="titulo-container">
+    <div class="titulo mat-elevation-z2">Mis Listas de Lectura</div>
+  </div>
+
+  <!-- Lista 1 -->
+  <div class="lista-container">
+    <div class="lista-titulo">Lista 1</div>
+    <div class="lista-libros">
+      <mat-card *ngFor="let book of books | slice:0:28">
+        <div class="libro">
+          <img [src]="book.img" alt="Libro">
+          <div class="libro-nombre">{{book.name}}</div>
+          <div class="libro-description">{{book.description}}</div>
+          <!--<button class="ver-button">Ver</button>-->
+        </div>
+      </mat-card>
+
+    </div>
+  </div>
+
+  <div class="lista-container">
+    <div class="lista-titulo">Lista 2</div>
+    <div class="lista-libros">
+      <mat-card *ngFor="let book of books | slice:28:56">
+        <div class="libro">
+          <img [src]="book.img" alt="Libro">
+          <div class="libro-nombre">{{book.name}}</div>
+          <!--<button class="ver-button">Ver</button>-->
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>

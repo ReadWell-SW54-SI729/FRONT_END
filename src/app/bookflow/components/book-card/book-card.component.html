@@ -2,8 +2,8 @@
   <div id="catalogo">Catálogo:</div>
   <div class="button-container">
     <a href="/home/tendencia" class="orange-button" style="text-decoration: none;">Tendencias</a>
-    <button mat-button class="orange-button">Autores</button>
-    <button mat-button class="orange-button">Mi Lista</button>
+    <button mat-button class="orange-button" (click)="goAuthors()" >Autores</button>
+    <button mat-button class="orange-button" (click)="goLectures()" >Mi Lista</button>
   </div>>
   <mat-form-field color="accent" role="search">
     <mat-label id="search">Buscar</mat-label>

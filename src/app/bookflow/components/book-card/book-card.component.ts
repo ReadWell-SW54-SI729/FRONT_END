@@ -146,4 +146,14 @@ export class BookCardComponent implements OnInit{
     }
 
   }
+  goAuthors() {
+    console.log('Book details:');
+    this.router.navigateByUrl(`Catalogue/bookListAuthors`);
+  }
+
+  goLectures() {
+    console.log('Book details:');
+    this.router.navigateByUrl(`Catalogue/bookListLectures`);
+  }
+
 }

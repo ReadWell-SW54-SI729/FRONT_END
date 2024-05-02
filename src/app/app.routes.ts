@@ -6,6 +6,8 @@ import {BookCommentComponent} from "./bookflow/components/book-comment/book-comm
 import {IniciosesionComponent} from "./bookflow/components/book-iniciosesion/iniciosesion/iniciosesion.component";
 import {RegistroComponent} from "./bookflow/components/book-registro/registro/registro.component";
 import {BookTendenciaComponent} from "./bookflow/components/book-tendencia/book-tendencia.component";
+import {AutorComponent} from "./bookflow/components/book-listas/lista-autores/autor.component";
+import {LecturaComponent} from "./bookflow/components/book-listas/lista-lecturas/lectura.component";
 
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
@@ -15,6 +17,8 @@ export const routes: Routes = [
   {path : 'home/tendencia', component: BookTendenciaComponent},
   {path: 'Catalogue/bookDetail/:id', component: BookDetailComponent },
   {path: 'Catalogue/bookDetail/:id/Comment', component: BookCommentComponent },
+  {path: 'Catalogue/bookListLectures', component: LecturaComponent },
+  {path: 'Catalogue/bookListAuthors', component: AutorComponent },
   {path : '', redirectTo: 'home', pathMatch: 'full'},
   {path : '**', redirectTo: 'home', pathMatch: 'full'}
 ];
