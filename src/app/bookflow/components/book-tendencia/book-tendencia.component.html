@@ -1,4 +1,8 @@
 <div class="imagenes">
+  <div id="tendencia">Tendencias</div>
+  <div class="buttom">
+    <a href="/home/Catalogue" class="button-link">BACK</a>
+  </div>
   <div class="tarjetas-container">
     <div class="tarjeta-container" *ngFor="let book of libros">
       <div class="tarjeta book-card" (click)="getDetails(book)">
@@ -12,4 +16,4 @@
   </div>
 </div>
 <BR>
-<button mat-button color="primary" (click)="goCatalogue()" class="custom-button">Ver más</button>
+

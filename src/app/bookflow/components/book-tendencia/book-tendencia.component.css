@@ -1,17 +1,50 @@
+
+
+
+#tendencia {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  font-style: normal;
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+  margin-left: 90px; /* Mover hacia la derecha */
+  margin-right: 50px; /* Mover hacia la izquierda */
+  margin-top: 70px; /* Mover hacia arriba */
+  margin-bottom: 1rem; /* Mover hacia abajo */
+}
+
+.botones-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 90px; /* Mismo margen izquierdo que #tendencia */
+  margin-right: 50px; /* Mismo margen derecho que #tendencia */
+}
+
+.button-link {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  padding: 0.7rem 1.5rem; /* Ajuste de espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado */
+  border: none; /* Quitar borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-left: 80rem;
+  margin-top: -10rem; /* Mover hacia arriba */
+
+}
+
 .tarjetas-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 90px; /* Mismo margen izquierdo que #catalogo */
-  margin-right: 50px; /* Mismo margen derecho que #catalogo */
-  margin-top: 50px; /* Mismo margen superior que #catalogo */
-  margin-bottom: 30px; /* Mismo margen inferior que #catalogo */
-}
-
-.tarjeta-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  margin-left: 90px; /* Mismo margen izquierdo que #tendencia */
+  margin-right: 50px; /* Mismo margen derecho que #tendencia */
+  margin-top: 20px; /* Espacio superior reducido */
+  margin-bottom: 30px; /* Mismo margen inferior que #tendencia */
 }
 
 .tarjeta {
@@ -43,6 +76,3 @@
   margin-top: 5px; /* Margen superior */
 }
 
-.custom-button {
-  margin-top: 20px; /* Espacio superior */
-}
