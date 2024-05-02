@@ -15,6 +15,21 @@
   margin-bottom: 20px;
 }
 
+.button-link {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  padding: 0.7rem 1.5rem; /* Ajuste de espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado */
+  border: none; /* Quitar borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-left: 80rem;
+  margin-top: -10rem; /* Mover hacia arriba */
+
+}
+
 .titulo {
   background-color: #FFD54F;
   color: white;
