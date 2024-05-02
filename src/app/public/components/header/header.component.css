@@ -11,7 +11,16 @@ a {
   text-decoration: none;
   color: #333;
 }
+.responsive-toolbar {
+  position: fixed; /* Fija la posición de la barra de herramientas */
+  top: 0; /* Fija la barra de herramientas en la parte superior */
+  width: 100%; /* Ancho completo */
+  z-index: 1000; /* Asegura que la barra de herramientas esté por encima de otros elementos */
+}
 
+.content {
+  margin-top: 80px; /* Ajusta el margen superior para evitar que el contenido se superponga con la barra de herramientas */
+}
 button {
   background-color: #FFB74B;
   color: #fff;
