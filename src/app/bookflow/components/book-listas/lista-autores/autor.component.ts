@@ -40,9 +40,11 @@ export class AutorComponent implements OnInit {
             return new Book(
               book.bookIsbn,
               book.bookTitle,
+              book.bookGenre,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
+              book.bookAuthorImage,
               book.bookPublisher,
               book.amazonBookUrl
             );
@@ -67,9 +69,9 @@ export class AutorComponent implements OnInit {
 
   mostrarSnackBar(mensaje: string) {
     this._snackBar.open(mensaje, 'Cerrar', {
-      duration: 3000, // Duración de la Snackbar en milisegundos (3 segundos en este caso)
-      horizontalPosition: 'center', // Posición horizontal del mensaje
-      verticalPosition: 'bottom' // Posición vertical del mensaje
+      duration: 3000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
     });
   }
 }

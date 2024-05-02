@@ -60,7 +60,13 @@
   color: black;
 }
 
-.ver-button {
+.libro-description {
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+
+/*.ver-button {
   background-color: #08cd19;
   color: white;
   border: none;
@@ -72,7 +78,7 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-}
+}*/
 
 /* Estilos responsive */
 @media (max-width: 768px) {

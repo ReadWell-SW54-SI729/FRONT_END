@@ -7,9 +7,9 @@
   <div class="lista-container">
     <div class="lista-titulo"></div>
     <div class="lista-autores">
-      <mat-card *ngFor="let book of books | slice:0:35">
+      <mat-card *ngFor="let book of books | slice:0:14">
         <div class="autor">
-            <img src="./assets/imagen-joaquin.png" alt="Autor">
+            <img [src]="book.authorImage" alt="Autor">
           <div class="autor-nombre">{{book.author}}</div>
           <div class="autor-descripcion">{{book.description}}</div>
           <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
@@ -23,9 +23,9 @@
   <div class="lista-container">
     <div class="lista-titulo"></div>
     <div class="lista-autores">
-      <mat-card *ngFor="let book of books | slice:35:70">
+      <mat-card *ngFor="let book of books | slice:14:28">
         <div class="autor">
-          <img [src]="book.img" alt="Autor">
+          <img [src]="book.authorImage" alt="Autor">
           <div class="autor-nombre">{{book.author}}</div>
           <div class="autor-descripcion">{{book.description}}</div>
           <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>

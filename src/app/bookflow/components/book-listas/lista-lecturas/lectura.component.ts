@@ -45,9 +45,11 @@ export class LecturaComponent implements OnInit{
             return new Book(
               book.bookIsbn,
               book.bookTitle,
+              book.bookGenre,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
+              book.bookAuthorImage,
               book.bookPublisher,
               book.amazonBookUrl
             );
@@ -62,9 +64,5 @@ export class LecturaComponent implements OnInit{
         // Manejar el error apropiadamente
       }
     );
-  }
-  getDetails(book: any) {
-    console.log('Book details:', book.id);
-    this.router.navigateByUrl(`Catalogue/bookDetail/${book.id}`);
   }
 }
