@@ -1,0 +1,429 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Estilos generales */
+body {
+  font-family: "Josefin Sans";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #FFA726;
+}
+
+/* Estilos de la sección 1 */
+.seccion1 {
+  position: relative;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg');
+}
+
+.seccion1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg') ;/* Aplicar el gradiente y la imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  z-index: -1; /* Colocar detrás del contenido */
+}
+
+
+.slogan {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  max-width: 80%;
+  margin: 3rem ;
+
+}
+
+.seccion1 .slogan {
+  text-align: center;
+  margin-bottom: 2rem;
+
+}
+
+.seccion1 .comenzar-btn {
+  font-size: 1.5rem; /* Tamaño de fuente más grande */
+  padding: 1rem 2rem; /* Espaciado interno mayor */
+}
+
+.seccion1 .comenzar-btn {
+  display: block; /* Convertir el botón en un bloque para centrarlo */
+  margin: 0 auto; /* Margen automático para centrarlo horizontalmente */
+}
+
+@media screen and (max-width: 768px) {
+  .seccion1 .slogan {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño para dispositivos móviles */
+  }
+}
+
+
+
+.slogan .highlight {
+
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  display: block;
+  font-style: normal; /* Evitar que herede el estilo cursiva */
+
+
+}
+
+.highlight {
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+}
+
+@keyframes buttonMovement {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.bokflow {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: black; /* Cambiar el color a negro */
+  display: inline-block; /* Asegurar que ocupe solo el espacio necesario */
+  text-shadow: 0 0 5px #ff9900, /* Agregar sombra naranja */
+  0 0 10px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 15px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 20px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 25px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 30px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 35px #ff9900; /* Aumentar la intensidad del brillo */
+  animation: pulsate 2s infinite; /* Agregar animación pulsante */
+  transform: translateY(70px); /* Mover hacia abajo un poco */
+
+
+}
+
+
+@keyframes pulsate {
+  0% { opacity: 0.5; } /* Empezar con opacidad baja */
+  50% { opacity: 1; } /* Aumentar la opacidad a la mitad de la animación */
+  100% { opacity: 0.5; } /* Volver a la opacidad baja al final de la animación */
+}
+
+
+.comenzar-btn {
+  background-color: #ff9900;
+  color: white;
+  padding: 15px 30px; /* Aumentar el padding para hacer el botón más grande */
+  font-size: 1.2rem; /* Aumentar el tamaño de la fuente */
+  border: none; /* Eliminar los bordes */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transición para el cambio de color */
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agregar sombra para el efecto 3D */
+  animation: buttonMovement 3s infinite; /* Aplicar la animación */
+}
+
+.comenzar-btn:hover {
+  background-color: #ff4800;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Aumentar la sombra al hacer hover */
+}
+
+
+/* Estilos de la sección integrantes */
+.integrantes {
+  padding: 13rem;
+  background-color: black; /* Cambio del color de fondo a negro */
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.integrantes .titulo {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: black; /* Cambiar el color a negro */
+  display: inline-block; /* Asegurar que ocupe solo el espacio necesario */
+  text-shadow: 0 0 5px #ff9900, /* Agregar sombra naranja */
+  0 0 10px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 15px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 20px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 25px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 30px #ff9900, /* Aumentar la intensidad del brillo */
+  0 0 35px #ff9900; /* Aumentar la intensidad del brillo */
+}
+
+.integrantes .caja-texto {
+  font-size: 1.2rem;
+  text-align: justify;
+  max-width: 60%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+  color: #cdcdcd;
+  padding: 20px; /* Agregar relleno para separar el texto del borde */
+  box-shadow: 0 10px 20px rgb(255, 115, 0); /* Agregar sombra blanca */
+}
+
+
+
+.integrantes .imagenes-participantes img {
+  width: 140px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 1rem;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), /* Sombra blanca interna */
+  0 0 20px rgba(255, 255, 255, 0.5) inset, /* Sombra blanca interna */
+  0 0 20px rgba(255, 255, 255, 0.5); /* Sombra blanca externa */
+  transition: box-shadow 0.3s ease-in-out; /* Agregar transición para el efecto de palpitar */
+}
+
+.integrantes .imagenes-participantes img:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7), /* Aumentar el brillo al hacer hover */
+  0 0 40px rgba(255, 255, 255, 0.7) inset, /* Aumentar el brillo al hacer hover */
+  0 0 40px rgba(255, 255, 255, 0.7); /* Aumentar el brillo al hacer hover */
+}
+
+/*dddddd*/
+.Catalogo {
+  justify-content: center;
+  padding: 5rem 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg');
+  background-color: #f5f5f5;
+}
+
+.contenedor1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titulo {
+  margin-bottom: 20px;
+}
+
+.tarjetas-container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.tarjeta {
+  margin-right: 10px;
+}
+
+.book-card {
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-card-img {
+  width: 100%;
+}
+
+.mat-card-title {
+  font-size: 1.20rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #f7f7f7;
+}
+
+.book-card {
+  flex: 0 0 auto; /* Evita que las tarjetas cambien de tamaño */
+  margin-right: 10px; /* Espacio entre las tarjetas */
+}
+
+.custom-button {
+  margin-right: 10px;
+  width: fit-content;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #f18900; /* Color naranja */
+  color: white; /* Texto blanco */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.custom-button:hover {
+  transform: translateY(-3px); /* Mover hacia arriba al pasar el ratón */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+}
+
+
+.contenedor2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.titulo {
+  display: flex;
+  align-items: center; /* Asegura que todo esté alineado verticalmente en el centro */
+  justify-content: start; /* Alinea horizontalmente al inicio del contenedor */
+  margin-bottom: 2rem;
+  font-size: 2.5rem; /* Ajuste del tamaño del texto */
+  color: #333; /* Color del texto para mejor contraste */
+  width: 100%; /* Asegura que el título ocupe el ancho completo del contenedor */
+}
+
+
+.corazon img {
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+}
+
+.audiolibro img {
+  width: 80px; /* Ajusta el tamaño según sea necesario */
+}
+
+.texto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 0.2; /* Permite que el área del texto crezca para ocupar el espacio disponible */
+}
+
+.texto input[type="button"] {
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  border: none;
+  background-color: #ff8c00; /* Color naranja */
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra más profunda para un efecto más 3D */
+}
+
+.texto input[type="button"]:hover {
+  background-color: #ff4500; /* Cambia a rojo */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra más ligera al pasar el cursor */
+  transform: translateY(-2px); /* Se eleva ligeramente al pasar el cursor */
+}
+
+.texto input[type="button"]:active {
+  background-color: #e63900; /* Un tono más oscuro de rojo al presionar */
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); /* Sombra más plana al presionar */
+  transform: translateY(2px); /* Se hunde ligeramente al ser presionado */
+}
+
+
+
+.imagenes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+@keyframes blink {
+  0%, 100% {
+    border-color: orange;
+    box-shadow: 0 0 10px orange;
+  }
+  50% {
+    border-color: transparent;
+    box-shadow: 0 0 5px transparent;
+  }
+}
+
+.imagenes img {
+  width: 200px;
+  margin: 0.5rem;
+  border-radius: 10px;
+  border: 5px solid orange; /* Borde naranja */
+  box-shadow: 0 0 20px orange; /* Sombra naranja */
+  animation: blink 2s infinite; /* Animación que hace que parpadee el borde y la sombra */
+}
+
+
+/* Formulario */
+/* Estilos del formulario de contacto */
+
+
+.formulario-contacto {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 20px; /* Radio de borde redondeado */
+  background-color: #cdcdcd; /* Color de fondo */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); /* Sombra más profunda y más extensa */
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+
+.formulario-contacto h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.formulario-contacto p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group textarea {
+  margin: 10px 0;
+  width: 100%;
+  padding: 15px;
+  border: 2px solid #ddd; /* Aumentando el grosor del borde */
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease; /* Añadiendo una transición para el color del borde */
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="email"]:focus,
+.input-group textarea:focus {
+  outline: none;
+  border-color: #FFB74B; /* Cambiando el color del borde al enfocar */
+}
+
+.input-group input[type="submit"] {
+  background-color: #FFB74B;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.input-group input[type="submit"]:hover {
+  background-color: #FFA726;
+}
+
+
+.imagenes-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.imagenes-redes img {
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.imagenes-redes img:hover {
+  transform: scale(1.2);
+}
+

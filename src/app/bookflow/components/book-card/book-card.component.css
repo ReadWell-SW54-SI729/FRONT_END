@@ -1,0 +1,86 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+}
+
+#catalogo {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  display: block;
+  font-style: normal; /* Evitar que herede el estilo cursiva */
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+}
+.mat-form-field {
+  margin-left: 20px; /* Ajusta el espacio entre el botón y el campo de búsqueda */
+}
+
+.button-container {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.orange-button {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Texto blanco */
+  border: none; /* Sin borde */
+  border-radius: 30px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno */
+  cursor: pointer; /* Cursor al pasar */
+  transition: background-color 0.3s; /* Transición suave */
+}
+
+.orange-button:hover {
+  background-color: #ff7f00; /* Color naranja más claro al pasar el ratón */
+}
+
+
+
+.filter {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.filter-button:hover {
+  background-color: #0056b3;
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Columnas automáticas */
+  gap: 20px; /* Distancia entre las tarjetas */
+  padding: 20px; /* Espaciado interno */
+}
+
+.book-card {
+  background-color: #fff; /* Color de fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+.book-card:hover {
+  transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.mat-card-title {
+  font-size: 1.2rem; /* Tamaño del título */
+  font-weight: bold; /* Negrita */
+  margin-top: 5px; /* Margen superior */
+}
+
+
+

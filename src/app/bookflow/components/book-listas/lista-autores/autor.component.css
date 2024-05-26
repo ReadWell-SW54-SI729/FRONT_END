@@ -1,0 +1,104 @@
+/* Estilos generales del contenedor principal */
+.autor-container {
+  justify-content: center;
+  background-image: url(/assets/fondo1.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-block: 5rem;
+}
+
+
+.titulo-container {
+  margin-bottom: 20px;
+}
+
+.button-link {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  padding: 0.7rem 1.5rem; /* Ajuste de espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado */
+  border: none; /* Quitar borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-left: 80rem;
+  margin-top: -10rem; /* Mover hacia arriba */
+
+}
+
+.titulo {
+  background-color: #FFD54F;
+  color: white;
+  font-size: 28px;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+/* Estilos de las listas */
+.lista-container {
+  margin-bottom: 40px;
+}
+
+.lista-titulo {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+/* Estilos de los libros */
+.lista-autores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.autor {
+  width: 200px;
+  text-align: center;
+}
+
+.autor img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.autor-nombre {
+  font-size: larger;
+  margin-top: 10px;
+  font-weight: bold;
+  color: black;
+}
+.seguir-button {
+  background-color: #2555ac;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Estilos responsive */
+@media (max-width: 768px) {
+  .autor {
+    width: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .autor {
+    width: 120px;
+  }
+}
+

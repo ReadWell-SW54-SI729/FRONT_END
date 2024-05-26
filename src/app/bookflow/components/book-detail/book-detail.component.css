@@ -1,0 +1,79 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('/assets/fondo1.jpg'); /* Ajusta la ruta según sea necesario */
+  background-position: center; /* Centra la imagen en la página */
+}
+
+@keyframes border-glow {
+  0% { border-color: #000000; } /* Color negro */
+  50% { border-color: #ffffff; } /* Color verde */
+  100% { border-color: #000000; } /* Color negro */
+}
+
+.book-card {
+  width: 80%;
+  background-color: #ffaa00; /* Naranja */
+  color: #333; /* Negro */
+  border: 5px solid #ff0000; /* Borde sólido con un color rojo */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave para dar profundidad */
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; /* Transiciones suaves para transformación, sombra y color de borde */
+  animation: border-glow 2s infinite; /* Animación de iluminación cada 2 segundos */
+}
+
+.book-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el ratón por encima */
+}
+
+
+
+.book-info {
+  padding: 80px;
+  display: flex;
+}
+
+.book-image {
+  background-color: antiquewhite;
+  padding: 50px;
+  border: 4px solid black;
+  text-align: center;
+}
+
+.book-image img {
+  width: 70%;
+  height: 100%;
+  object-fit: cover; /* Centra la imagen manteniendo la relación de aspecto */
+  vertical-align: middle;
+}
+
+.book-details-card {
+  flex: 2;
+  width: 100%;
+  padding: 20px;
+  right: 10px;
+  border: 4px solid #000000;
+}
+
+.book-details-card mat-card-header {
+  background-color: #333; /* Negro */
+}
+
+.book-details-card mat-card-title {
+  color: #fff; /* Blanco */
+  font-size: 24px; /* Tamaño de letra grande */
+}
+
+.book-details-card mat-card-content {
+  color: #2c2c2c; /* Negro */
+}
+
+/* Estilos para los párrafos dentro del mat-card-content */
+.book-details-card mat-card-content p {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 24px; /* Tamaño de letra grande */
+}
+

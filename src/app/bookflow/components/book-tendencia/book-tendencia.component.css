@@ -1,0 +1,78 @@
+
+
+
+#tendencia {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  font-style: normal;
+  text-shadow: 0 0 15px rgb(0, 0, 0);
+  margin-left: 90px; /* Mover hacia la derecha */
+  margin-right: 50px; /* Mover hacia la izquierda */
+  margin-top: 70px; /* Mover hacia arriba */
+  margin-bottom: 1rem; /* Mover hacia abajo */
+}
+
+.botones-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-left: 90px; /* Mismo margen izquierdo que #tendencia */
+  margin-right: 50px; /* Mismo margen derecho que #tendencia */
+}
+
+.button-link {
+  background-color: orange; /* Color de fondo naranja */
+  color: white; /* Color de texto blanco */
+  padding: 0.7rem 1.5rem; /* Ajuste de espaciado interno */
+  border-radius: 5px; /* Borde redondeado */
+  text-decoration: none; /* Quitar subrayado */
+  border: none; /* Quitar borde */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
+  font-size: 1.1rem; /* Tamaño de la fuente */
+  margin-left: 80rem;
+  margin-top: -10rem; /* Mover hacia arriba */
+
+}
+
+.tarjetas-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 90px; /* Mismo margen izquierdo que #tendencia */
+  margin-right: 50px; /* Mismo margen derecho que #tendencia */
+  margin-top: 20px; /* Espacio superior reducido */
+  margin-bottom: 30px; /* Mismo margen inferior que #tendencia */
+}
+
+.tarjeta {
+  margin: 35px; /* Margen entre tarjetas */
+  width: 200px; /* Ancho de la tarjeta */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Hacer la sombra más notoria */
+  transition: transform 0.3s ease; /* Agregar transición para el efecto de agrandamiento */
+  background-color: #ffe3e3; /* Color de fondo nuevo */
+}
+
+/* Efecto de agrandamiento al seleccionar la tarjeta */
+.tarjeta:hover {
+  transform: scale(1.05); /* Agrandar la tarjeta */
+  box-shadow: 0 12px 24px rgb(255, 19, 19); /* Hacer la sombra aún más notoria */
+}
+
+.book-card-img {
+  width: 100%; /* Ajusta el ancho de la imagen al 100% de la tarjeta */
+  height: auto; /* Altura automática */
+}
+
+.descripcion {
+  padding: 10px; /* Espacio interno */
+}
+
+.mat-card-title {
+  font-size: 1rem; /* Tamaño del título */
+  font-weight: bold; /* Peso de la fuente */
+  margin-top: 5px; /* Margen superior */
+}
+

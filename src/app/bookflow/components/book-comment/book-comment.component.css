@@ -1,0 +1,58 @@
+.container-wrapper {
+  background-color: #ffffff;
+  padding: 60px;
+  border-radius: 15px;
+  width: fit-content;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  margin: 0 auto; /* Centrar horizontalmente */
+  margin-top: 100px; /* Margen superior */
+  margin-block: 100px;
+}
+
+.comment-information,
+.book,
+.review,
+.bars,
+.icon-button {
+  width: 100%;
+  color: #333333; /* Color de texto */
+  margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.comment-info {
+  font-size: 24px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  margin-bottom: 20px;
+  animation: shine 2s infinite;
+}
+
+.book,
+.review {
+  font-size: 18px;
+}
+
+.bars input[type="book-bar"],
+.bars input[type="review-bar"] {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.icon-button {
+  margin-top: 20px;
+  background-color: #FF9900;
+  color: #FFFFFF;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon-button:hover {
+  background-color: #ff6a00;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
