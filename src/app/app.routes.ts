@@ -10,7 +10,9 @@ import {AutorComponent} from "./bookflow/components/book-listas/lista-autores/au
 import {LecturaComponent} from "./bookflow/components/book-listas/lista-lecturas/lectura.component";
 import {ProfileComponent} from "./bookflow/components/book-profile/profile/profile.component";
 import { BookEditprofileComponent } from "./bookflow/components/book-editprofile/book-editprofile.component";
-
+import {ReadingClubComponent} from "./bookflow/components/book-reading-club/reading-club/reading-club.component";
+import  {BookCreateRedingClubComponent} from "./bookflow/components/book-create-reding-club/book-create-reding-club.component";
+import { BookUserClubComponent } from './bookflow/components/book-user-club/book-user-club.component';
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
   {path : 'home/Catalogue', component: BookCardComponent},
@@ -22,6 +24,9 @@ export const routes: Routes = [
   {path: 'Catalogue/bookDetail/:id/Comment', component: BookCommentComponent },
   {path: 'Catalogue/bookListLectures', component: LecturaComponent },
   {path: 'Catalogue/bookListAuthors', component: AutorComponent },
+  {path : 'Catalogue/reading-club', component: ReadingClubComponent},
+  {path : 'Catalogue/reading-club/create-club', component: BookCreateRedingClubComponent},
+  {path : 'profile/user-club', component: BookUserClubComponent},
   {path : 'home/profile', component: ProfileComponent},
   {path : '', redirectTo: 'home', pathMatch: 'full'},
   {path : '**', redirectTo: 'home', pathMatch: 'full'}

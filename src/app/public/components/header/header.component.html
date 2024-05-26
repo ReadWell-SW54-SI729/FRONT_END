@@ -12,22 +12,20 @@
     <div class="logo">
       <img src="./assets/LogoBook.jpeg" alt="Logo de la empresa BookFlow" width="210" height="70">
     </div>
-    <nav>
+    <button class="menu-button" aria-label="Menu" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <nav [class.show-menu]="showMenu">
       <a href="">INICIO</a>
       <a href="#integrantes">NOSOTROS</a>
       <a href="/home/Catalogue">CATÁLOGO</a>
       <a href="#contacto">CONTACTOS</a>
-      <div class="buttom">
+      <div class="button-wrapper">
         <a href="/home/iniciosesion" class="button-link">ÚNETE AQUÍ</a>
+        <button aria-label="Profile" onclick="window.location.href = '/home/profile';">
+          <img src="./assets/icono_1.png" alt="Icono1" width="30px" height="30px">
+        </button>
       </div>
-
-      <button onclick="window.location.href = '/home/profile';" style="border: none; background: none; cursor: pointer;">
-        <img src="./assets/icono_1.png" alt="Icono1" width="30px" height="30px">
-      </button>
-
     </nav>
-
-    <span class="example-spacer"></span>
   </mat-toolbar>
-</p>
-
+<p>

@@ -156,4 +156,8 @@ export class BookCardComponent implements OnInit{
     this.router.navigateByUrl(`Catalogue/bookListLectures`);
   }
 
+  goReadingClub() {
+    console.log('Book details:');
+    this.router.navigateByUrl(`Catalogue/reading-club`);
+  }
 }
