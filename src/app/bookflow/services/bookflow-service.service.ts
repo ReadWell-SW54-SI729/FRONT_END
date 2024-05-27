@@ -73,5 +73,28 @@ export class  BookflowService {
       tap((response) => console.log('Club created:', response))
     );
   }
+// Métodos para leer libros, ajustar configuración y manejar marcadores/notas
+  readBook(isbn: string) {
+    return this.Http.get<any>(`${this.baseUrl}/books/${isbn}/read`).pipe(
+      tap((response) => console.log('Reading book response:', response))
+    );
+  }
 
+  adjustReadingSettings(isbn: string, settings: any) {
+    return this.Http.patch<any>(`${this.baseUrl}/books/${isbn}/settings`, settings).pipe(
+      tap((response) => console.log('Adjust settings response:', response))
+    );
+  }
+
+  addBookmark(isbn: string, bookmark: any) {
+    return this.Http.post<any>(`${this.baseUrl}/books/${isbn}/bookmarks`, bookmark).pipe(
+      tap((response) => console.log('Add bookmark response:', response))
+    );
+  }
+
+  addNote(isbn: string, note: any) {
+    return this.Http.post<any>(`${this.baseUrl}/books/${isbn}/notes`, note).pipe(
+      tap((response) => console.log('Add note response:', response))
+    );
+  }
 }
