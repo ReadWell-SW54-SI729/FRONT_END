@@ -10,6 +10,9 @@ import {AutorComponent} from "./bookflow/components/book-listas/lista-autores/au
 import {LecturaComponent} from "./bookflow/components/book-listas/lista-lecturas/lectura.component";
 import {ProfileComponent} from "./bookflow/components/book-profile/profile/profile.component";
 import { BookEditprofileComponent } from "./bookflow/components/book-editprofile/book-editprofile.component";
+import { RecommendFriendsComponent } from "./bookflow/components/book-recommend/recommend-friends/recommend-friends.component";
+import {ClubCreateComponent} from "./bookflow/components/book-club/club-create/club-create.component";
+
 
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
@@ -18,8 +21,10 @@ export const routes: Routes = [
   {path : 'home/registro', component: RegistroComponent},
   {path : 'home/profile/editprofile', component: BookEditprofileComponent},
   {path : 'home/tendencia', component: BookTendenciaComponent},
+  {path: 'home/club/create', component: ClubCreateComponent },
   {path: 'Catalogue/bookDetail/:id', component: BookDetailComponent },
   {path: 'Catalogue/bookDetail/:id/Comment', component: BookCommentComponent },
+  {path: 'Catalogue/bookDetail/:id/Recommend', component: RecommendFriendsComponent },
   {path: 'Catalogue/bookListLectures', component: LecturaComponent },
   {path: 'Catalogue/bookListAuthors', component: AutorComponent },
   {path : 'home/profile', component: ProfileComponent},
