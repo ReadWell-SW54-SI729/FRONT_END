@@ -1,0 +1,39 @@
+<!-- Sección de Crear Club de Lectura -->
+<section class="create-club">
+  <div class="container">
+    <div class="section-header">
+      <h2>Crear Club de Lectura</h2>
+      <p>Forma tu propio club de lectura y comparte tu pasión por los libros con otros amantes de la literatura.</p>
+    </div>
+    <div class="club-form">
+      <div class="form-group">
+        <label for="club-name">Nombre del Club:</label>
+        <input type="text" id="club-name" name="club-name" [(ngModel)]="clubName" required>
+      </div>
+      <div class="form-group">
+        <label for="club-description">Descripción del Club:</label>
+        <textarea id="club-description" name="club-description" [(ngModel)]="clubDescription" required maxlength="200"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="club-category">Categoría de Interés:</label>
+        <select id="club-category" name="club-category" [(ngModel)]="clubCategory" required>
+          <option value="">Selecciona una categoría</option>
+          <option value="fiction">Ficción</option>
+          <option value="non-fiction">No Ficción</option>
+          <option value="poetry">Poesía</option>
+          <option value="thriller">Thriller</option>
+          <option value="romance">Romance</option>
+          <option value="sci-fi">Ciencia Ficción</option>
+          <option value="fantasy">Fantasía</option>
+        </select>
+      </div>
+      <button class="btn-primary" (click)="createClub()">Crear Club</button>
+    </div>
+    <div class="message" *ngIf="showSuccess">
+      <p class="success-message">¡Club de Lectura creado con éxito!</p>
+    </div>
+    <div class="message" *ngIf="showError">
+      <p class="error-message">Por favor, complete todos los campos.</p>
+    </div>
+  </div>
+</section>

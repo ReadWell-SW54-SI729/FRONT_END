@@ -1,0 +1,108 @@
+/* Estilos generales */
+body {
+  font-family: 'Fuente', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Sección de Crear Club de Lectura */
+.create-club {
+  background-color: #FFB74B;
+  padding: 80px 0 40px; /* Espacio superior para el header */
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.section-header p {
+  font-size: 24px;
+  color: #555;
+}
+
+.club-form {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 600px; /* Ancho máximo para el formulario */
+  margin: 0 auto; /* Centrar el formulario */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box; /* Incluir el padding en el ancho total */
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: none; /* Evitar que se pueda cambiar el tamaño del textarea */
+}
+
+.btn-primary {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Hacer que el botón sea un elemento de bloque */
+  margin: 0 auto; /* Centrar el botón */
+}
+
+.message {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+  max-width: 600px; /* Ancho máximo para los mensajes */
+  margin: 20px auto 0; /* Centrar los mensajes */
+}
+
+.success-message {
+  color: #155724;
+}
+
+.error-message {
+  color: #721c24;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .club-form {
+    padding: 10px;
+  }
+}
