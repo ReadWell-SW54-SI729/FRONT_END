@@ -77,3 +77,18 @@
   font-size: 24px; /* Tamaño de letra grande */
 }
 
+.button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
