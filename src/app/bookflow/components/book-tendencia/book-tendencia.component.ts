@@ -70,7 +70,7 @@ export class BookTendenciaComponent implements OnInit {
     ].includes(book.bookAuthor);
   }
 
-    goCatalogue() {
+  goCatalogue() {
     console.log('Book details:');
     this.router.navigateByUrl(`home/Catalogue`);
   }

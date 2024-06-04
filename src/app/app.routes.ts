@@ -13,6 +13,8 @@ import { BookEditprofileComponent } from "./bookflow/components/book-editprofile
 import {ReadingClubComponent} from "./bookflow/components/book-reading-club/reading-club/reading-club.component";
 import  {BookCreateRedingClubComponent} from "./bookflow/components/book-create-reding-club/book-create-reding-club.component";
 import { BookUserClubComponent } from './bookflow/components/book-user-club/book-user-club.component';
+import {RecommendFriendsComponent} from "./bookflow/components/book-recommend/recommend-friends/recommend-friends.component";
+
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
   {path : 'home/Catalogue', component: BookCardComponent},
@@ -22,6 +24,7 @@ export const routes: Routes = [
   {path : 'home/tendencia', component: BookTendenciaComponent},
   {path: 'Catalogue/bookDetail/:id', component: BookDetailComponent },
   {path: 'Catalogue/bookDetail/:id/Comment', component: BookCommentComponent },
+  {path: 'Catalogue/bookDetail/:id/Recommend', component: RecommendFriendsComponent },
   {path: 'Catalogue/bookListLectures', component: LecturaComponent },
   {path: 'Catalogue/bookListAuthors', component: AutorComponent },
   {path : 'Catalogue/reading-club', component: ReadingClubComponent},

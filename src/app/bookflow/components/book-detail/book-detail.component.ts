@@ -149,4 +149,14 @@ export class BookDetailComponent implements OnInit {
     window.history.back();
   }
 
+  recommend(){
+    this.route.paramMap.subscribe(params => {
+      const isbn = params.get('id');
+      if (isbn) {
+        this.router.navigateByUrl(`Catalogue/bookDetail/${isbn}/Recommend`);
+      } else {
+        console.error('Name not found in route parameters.');
+      }
+    });
+  }
 }

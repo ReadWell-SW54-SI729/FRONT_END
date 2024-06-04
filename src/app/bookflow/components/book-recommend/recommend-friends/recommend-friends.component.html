@@ -1,0 +1,50 @@
+<!-- Sección de Recomendar libros a amigos -->
+<section class="recommend-books">
+  <div class="container">
+    <div class="section-header">
+      <h2>Recomendar libros a amigos</h2>
+      <p>Comparte tus lecturas favoritas con tus amigos y descubre nuevos títulos.</p>
+    </div>
+    <div class="book-details">
+      <img [src]="bookData.img" alt="Portada del libro" class="book-cover" />
+      <div class="book-info">
+        <h3>{{bookData.name}}</h3>
+        <p> {{bookData.author}}</p>
+        <p>{{bookData.description}}</p>
+      </div>
+    </div>
+    <div class="recommend-friends">
+      <h4>Recomendar a:</h4>
+      <div class="friends-list">
+        <div class="friend-card">
+          <img src="./assets/imagen-joaquin.png" alt="Juan Pérez" class="friend-avatar" />
+          <h5>Joaquin Pérez</h5>
+          <button class="btn-recommend" (click)="enviarMensaje()" >Recomendar</button>
+        </div>
+        <div class="friend-card">
+          <img src="./assets/imagen-franz.png" alt="María González" class="friend-avatar" />
+          <h5>Juan González</h5>
+          <button class="btn-recommend" (click)="enviarMensaje()" >Recomendar</button>
+        </div>
+        <div class="friend-card">
+          <img src="./assets/imagen-paolo.png" alt="Carlos Rodríguez" class="friend-avatar" />
+          <h5>Carlos Rodríguez</h5>
+          <button class="btn-recommend" (click)="enviarMensaje()" >Recomendar</button>
+        </div>
+        <div class="friend-card">
+          <img src="./assets/imagen-victor.png" alt="Carlos Rodríguez" class="friend-avatar" />
+          <h5>Chapulin Colorado</h5>
+          <button class="btn-recommend" (click)="enviarMensaje()" >Recomendar</button>
+        </div>
+        <div class="friend-card">
+          <img src="./assets/imagen-hernan.png" alt="Carlos Rodríguez" class="friend-avatar" />
+          <h5>Hernan Guzman</h5>
+          <button class="btn-recommend" (click)="enviarMensaje()" >Recomendar</button>
+        </div>
+        <div class="recommend-actions">
+          <button mat-raised-button (click)="goBack()">Volver</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

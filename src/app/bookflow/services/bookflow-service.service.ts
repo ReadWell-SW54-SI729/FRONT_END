@@ -24,7 +24,7 @@ export class  BookflowService {
     );
   }
 
-  getBooksByGenre(genre:string){
+  getBooksByGenre(genre: string[]){
 
       return this.Http.get<any>(`${this.baseUrl}/books?bookGenre=${genre}`).pipe(
         tap((response) => console.log('API Response:', response))
