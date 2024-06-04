@@ -1,11 +1,13 @@
 import {Component, OnInit} from '@angular/core';
 import {MatCard, MatCardContent, MatCardHeader, MatCardImage, MatCardTitle} from "@angular/material/card";
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {Book} from "../../model/book.model";
 import {BookflowService} from "../../services/bookflow-service.service";
 import {ActivatedRoute} from "@angular/router";
 import {MatButton} from "@angular/material/button";
 import {Router} from "@angular/router";
+import {FormsModule} from "@angular/forms";
+import {User} from "../../model/user.model";
 
 @Component({
   selector: 'app-book-detail',
@@ -17,20 +19,27 @@ import {Router} from "@angular/router";
     MatCardTitle,
     NgForOf,
     MatCardContent,
-    MatButton
+    MatButton,
+    FormsModule,
+    NgIf
   ],
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.css'
 })
 export class BookDetailComponent implements OnInit {
+  showFontSizeSelector: boolean = false; // Indica si mostrar el selector de tamaño de letra
+  selectedFontSize: string = '16px'; // Almacena el tamaño de letra seleccionado por el usuario
   bookData: Book;
   fontSize: string = '16px'; // Propiedad para almacenar el tamaño de la letra
-
+  userData: User;
+  isBookmarked: boolean = false;
   constructor(private bookService: BookflowService, private route: ActivatedRoute, private router: Router) {
     this.bookData = {} as Book;
+    this.userData = {} as User;
   }
 
   ngOnInit() {
+    this.getUser();
     this.route.paramMap.subscribe(params => {
       const isbn = params.get('id');
       if (isbn) {
@@ -67,76 +76,62 @@ export class BookDetailComponent implements OnInit {
       }
     );
   }
+  getUser() {
+    this.bookService.getUser().subscribe(
+      (data: any[]) => {
+        if (data && data.length > 0) {
+          this.userData = new User(
+            data[0].id,
+            data[0].firstName,
+            data[0].lastName,
+            data[0].age,
+            data[0].email,
+            data[0].description
+          );
+        }
+      });
+  }
 
+  addMark(bookId: any, userId: any) {
+    this.bookService.addMark(bookId, userId).subscribe({
+      next: (response) => {
+        console.log('Add bookmark response:', response);
+      },
+      error: (error) => {
+        console.error('Error adding bookmark:', error);
+      }
+    });
+  }
+  deleteMark(bookId: any, userId: any) {
+    this.bookService.deleteMark(bookId, userId).subscribe({
+      next: (response) => {
+        console.log('Delete bookmark response:', response);
+      },
+      error: (error) => {
+        console.error('Error deleting bookmark:', error);
+      }
+    });
+  }
+  toggleBookmark(bookId: any, userId: any) {
+    this.isBookmarked = !this.isBookmarked;
+    // Llama al método correspondiente para agregar o eliminar el marcador
+    if (this.isBookmarked) {
+      this.addMark(bookId, userId);
+    } else {
+      this.deleteMark(bookId, userId);
+    }
+  }
   readNow() {
-    const isbn = this.bookData.id;
-    if (isbn) {
-      this.bookService.readBook(isbn).subscribe(
-        (data: any) => {
-          console.log('Opening reader with book:', data);
-          // Implementar lógica para abrir el lector de libros
-        },
-        (error) => {
-          console.error('Error opening book reader:', error);
-        }
-      );
-    } else {
-      console.error('No ISBN available for the book.');
-    }
+    alert('Para acceder a este contenido, debe pagar una de nuestras suscripciones.');
   }
 
-  adjustSettings() {
-    const isbn = this.bookData.id;
-    const settings = { fontSize: this.fontSize, fontStyle: 'Arial' }; // Ajustes incluyendo el tamaño de la letra
-    if (isbn) {
-      this.bookService.adjustReadingSettings(isbn, settings).subscribe(
-        (data: any) => {
-          console.log('Reading settings adjusted:', data);
-          // Implementar lógica para aplicar los ajustes en el lector
-        },
-        (error) => {
-          console.error('Error adjusting reading settings:', error);
-        }
-      );
-    } else {
-      console.error('No ISBN available for the book.');
-    }
+  adjustFontSize() {
+    this.showFontSizeSelector = !this.showFontSizeSelector; // Alternar la visibilidad del selector de tamaño de letra
   }
 
-  addBookmark() {
-    const isbn = this.bookData.id;
-    const bookmark = { page: 42, note: 'Important section' };
-    if (isbn) {
-      this.bookService.addBookmark(isbn, bookmark).subscribe(
-        (data: any) => {
-          console.log('Bookmark added:', data);
-          // Implementar lógica para manejar los marcadores
-        },
-        (error) => {
-          console.error('Error adding bookmark:', error);
-        }
-      );
-    } else {
-      console.error('No ISBN available for the book.');
-    }
-  }
-
-  addNote() {
-    const isbn = this.bookData.id;
-    const note = { page: 42, content: 'This part explains the main plot twist.' };
-    if (isbn) {
-      this.bookService.addNote(isbn, note).subscribe(
-        (data: any) => {
-          console.log('Note added:', data);
-          // Implementar lógica para manejar las notas
-        },
-        (error) => {
-          console.error('Error adding note:', error);
-        }
-      );
-    } else {
-      console.error('No ISBN available for the book.');
-    }
+  applyFontSize() {
+    this.fontSize = this.selectedFontSize; // Aplicar el tamaño de letra seleccionado
+    this.showFontSizeSelector = false; // Ocultar el selector de tamaño de letra
   }
 
   agregarComentario() {
@@ -149,7 +144,9 @@ export class BookDetailComponent implements OnInit {
       }
     });
   }
-  goBack(){
+
+  goBack() {
     window.history.back();
   }
+
 }

@@ -35,8 +35,10 @@ import {Router} from "@angular/router";
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
+  userData: User;
   users:User[] = [];
   constructor(private bookService: BookflowService,private router: Router) {
+    this.userData = {} as User;
   }
   loginForm = new FormGroup({
     email: new FormControl(''),
@@ -51,32 +53,19 @@ export class ProfileComponent implements OnInit{
     this.bookService.getUser().subscribe(
       (data: any[]) => {
         if (data && data.length > 0) {
-          this.users = data.map((user: any) => {
-            return new User(
-              user.id,
-              user.firstName,
-              user.lastName,
-              user.age,
-              user.email,
-              user.description
-            );
-          });
+          this.userData = new User(
+            data[0].id,
+            data[0].firstName,
+            data[0].lastName,
+            data[0].age,
+            data[0].email,
+            data[0].description
+          );
         }
+      });
       }
-    );
-  }
-  getName() {
-    return this.users[0].firstName + ' ' + this.users[0].lastName;
-  }
-  getAge() {
-    return this.users[0].age;
-  }
-  getDescription() {
-    return this.users[0].description;
-  }
-  getEmail() {
-    return this.users[0].email;
-  }
+
+
   goToUserClubs() {
     return this.router.navigate(['profile/user-club']);
   }

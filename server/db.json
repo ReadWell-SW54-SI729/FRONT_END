@@ -380,7 +380,9 @@
       "meetingDate": "2022-12-01",
       "bookIsbn": "1538765020",
       "description": "Join fellow sleuths to dive into classic and modern mystery novels. Perfect for those who love solving puzzles and uncovering secrets.",
-      "users": []
+      "users": [
+        "1"
+      ]
     },
     {
       "id": "2",

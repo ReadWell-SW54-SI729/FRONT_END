@@ -1,9 +1,9 @@
 <div class="profile">
   <img src="./assets/imagen-joaquin.png" alt="Foto de perfil">
-  <h1>{{getName()}}</h1>
-  <p>Age: {{ getAge() }}</p>
-  <p>Email: {{getEmail()}}</p>
-  <p>Description: {{getDescription()}}</p>
+  <h1>{{userData.firstName +' '+userData.lastName}}</h1>
+  <p>Age: {{ userData.age }}</p>
+  <p>Email: {{userData.email}}</p>
+  <p>Description: {{userData.description}}</p>
 </div>
 <div class="buttom">
   <a href="/home/profile/editprofile" class="button-link">Editar perfil</a>

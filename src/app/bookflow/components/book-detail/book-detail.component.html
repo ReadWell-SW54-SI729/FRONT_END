@@ -1,4 +1,4 @@
-<div class="container" aria-labelledby="Page">
+<div class="container" aria-labelledby="Page" [style.font-size]="fontSize">
   <mat-card class="book-card" role="article" aria-labelledby="book-title">
     <div class="book-info">
       <!-- Imagen del libro -->
@@ -6,7 +6,7 @@
         <img mat-card-image [src]="bookData.img" alt="{{ bookData.name }}" />
       </mat-card-header>
       <!-- Detalles del libro -->
-      <mat-card-content class="book-details" [style.font-size]="fontSize">
+      <mat-card-content class="book-details">
         <h2 mat-card-title>{{ bookData.name }}</h2>
         <p class="book-genre">Género: {{ bookData.genre }}</p>
         <p class="book-description">{{ bookData.description }}</p>
@@ -15,16 +15,25 @@
         <p class="book-publisher">Editorial: {{ bookData.publisher }}</p>
       </mat-card-content>
     </div>
-    <!-- Botón para leer ahora -->
+    <!-- Botón para leer ahora y regresar a la pantalla anterior -->
     <div class="book-actions">
       <button mat-raised-button color="primary" (click)="readNow()">Leer Ahora</button>
       <button mat-raised-button (click)="goBack()">Volver</button>
     </div>
     <!-- Botones de configuración y agregar marcadores/notas -->
     <div class="reading-options">
-      <button mat-raised-button (click)="adjustSettings()">Ajustes de Lectura</button>
-      <button mat-raised-button (click)="addBookmark()">Agregar Marcador</button>
-      <button mat-raised-button (click)="addNote()">Agregar Nota</button>
+      <button mat-raised-button (click)="adjustFontSize()">Tamaño de letra</button>
+      <button mat-raised-button class="bookmark-button" [class.marked]="isBookmarked" (click)="toggleBookmark(bookData.id,userData.id)">Agregar Marcador</button>
+    </div>
+    <!-- Selección de tamaño de letra -->
+    <div *ngIf="showFontSizeSelector" class="font-size-selector">
+      <label for="fontSize">Tamaño de letra:</label>
+      <select id="fontSize" [(ngModel)]="selectedFontSize">
+        <option value="12px">12</option>
+        <option value="16px">16</option>
+        <option value="20px">20</option>
+      </select>
+      <button mat-raised-button color="primary" (click)="applyFontSize()">Aplicar</button>
     </div>
     <!-- Botón para agregar comentario -->
     <div class="comment-button">

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environments';
 import {HttpClient} from "@angular/common/http";
-import {tap} from "rxjs";
+import {catchError, EMPTY, switchMap, tap, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -74,27 +74,38 @@ export class  BookflowService {
     );
   }
 // Métodos para leer libros, ajustar configuración y manejar marcadores/notas
-  readBook(isbn: string) {
-    return this.Http.get<any>(`${this.baseUrl}/books/${isbn}/read`).pipe(
-      tap((response) => console.log('Reading book response:', response))
-    );
-  }
 
-  adjustReadingSettings(isbn: string, settings: any) {
-    return this.Http.patch<any>(`${this.baseUrl}/books/${isbn}/settings`, settings).pipe(
-      tap((response) => console.log('Adjust settings response:', response))
-    );
-  }
 
-  addBookmark(isbn: string, bookmark: any) {
-    return this.Http.post<any>(`${this.baseUrl}/books/${isbn}/bookmarks`, bookmark).pipe(
+  addMark(isbn: string, userId: string) {
+    return this.Http.patch<any>(`${this.baseUrl}/users/${userId}`, {bookFavorites:[isbn]}).pipe(
       tap((response) => console.log('Add bookmark response:', response))
     );
   }
+  //Métodos delete
 
-  addNote(isbn: string, note: any) {
-    return this.Http.post<any>(`${this.baseUrl}/books/${isbn}/notes`, note).pipe(
-      tap((response) => console.log('Add note response:', response))
+  deleteMark(isbn: string, userId: string) {
+    // Realizamos una solicitud GET para obtener los datos del usuario
+    return this.Http.get<any>(`${this.baseUrl}/users/${userId}`).pipe(
+      switchMap(userData => {
+        // Verificamos si los datos del usuario y la lista bookFavorites existen
+        if (userData && userData.bookFavorites) {
+          // Filtramos la lista bookFavorites para eliminar el ISBN específico
+          const updatedBookFavorites = userData.bookFavorites.filter((item: string) => item !== isbn);
+          // Realizamos una solicitud PATCH para actualizar la lista bookFavorites del usuario
+          return this.Http.patch<any>(`${this.baseUrl}/users/${userId}`, { bookFavorites: updatedBookFavorites }).pipe(
+            tap((response) => console.log('Delete bookmark response:', response))
+          );
+        } else {
+          // Si el usuario o la lista bookFavorites no existen, devolvemos un Observable vacío
+          console.error('User data or bookFavorites not found.');
+          return EMPTY;
+        }
+      }),
+      catchError(error => {
+        console.error('Error deleting bookmark:', error);
+        return throwError(error);
+      })
     );
   }
+
 }
