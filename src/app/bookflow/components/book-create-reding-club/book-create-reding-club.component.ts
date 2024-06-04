@@ -76,7 +76,7 @@ export class BookCreateRedingClubComponent {
 
     // Abrir la ventana de diálogo para seleccionar un libro
     const dialogRef = this.dialog.open(BookDialogComponent, {
-      width: '80%',
+      width: '40%',
       height: '80%'
     });
 

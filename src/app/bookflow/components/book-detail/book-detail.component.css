@@ -17,8 +17,10 @@
 }
 
 .book-header img {
-  width: 100%;
-  height: auto;
+  display: block; /* Esto garantiza que la imagen sea tratada como un bloque */
+  margin: 0 auto; /* Esto centrará horizontalmente la imagen */
+  max-width: 100%; /* Esto asegura que la imagen no exceda el ancho de su contenedor */
+  height: auto; /* Esto permite que la altura de la imagen se ajuste automáticamente mientras se mantiene la proporción */
   border-bottom: 1px solid #e0e0e0;
 }
 

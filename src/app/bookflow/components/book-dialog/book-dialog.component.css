@@ -1,3 +1,15 @@
+.mat-form-field {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+  .mat-form-field {
+    max-width: 100%;
+    margin: 0;
+  }
+}
 .book-item {
   cursor: pointer;
   margin-bottom: 1rem;
@@ -8,8 +20,19 @@
   flex-direction: column;
   align-items: center;
   padding: 1rem;
+  width: 100%;
 }
 
 .book-item mat-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 600px) {
+  .book-item mat-card {
+    padding: 0.5rem;
+  }
+}
+.book-item img {
+  max-width: 100%; /* Asegurar que la imagen no sobrepase el ancho del contenedor */
+  height: auto; /* Mantener la proporción de aspecto */
 }
