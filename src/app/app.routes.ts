@@ -14,6 +14,8 @@ import {ReadingClubComponent} from "./bookflow/components/book-reading-club/read
 import  {BookCreateRedingClubComponent} from "./bookflow/components/book-create-reding-club/book-create-reding-club.component";
 import { BookUserClubComponent } from './bookflow/components/book-user-club/book-user-club.component';
 import {RecommendFriendsComponent} from "./bookflow/components/book-recommend/recommend-friends/recommend-friends.component";
+import { BookSubscriptionComponent } from './bookflow/components/book-subscription/book-subscription.component';
+import { PaymentDetailsComponent } from './bookflow/components/payment-details/payment-details.component';
 
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
@@ -31,6 +33,8 @@ export const routes: Routes = [
   {path : 'Catalogue/reading-club/create-club', component: BookCreateRedingClubComponent},
   {path : 'profile/user-club', component: BookUserClubComponent},
   {path : 'home/profile', component: ProfileComponent},
+  {path : 'home/subscription', component: BookSubscriptionComponent}, // Nueva ruta agregada
+  {path : 'home/subscription/details', component: PaymentDetailsComponent},
   {path : '', redirectTo: 'home', pathMatch: 'full'},
-  {path : '**', redirectTo: 'home', pathMatch: 'full'}
+  {path : '**', redirectTo: 'home', pathMatch: 'full'},
 ];
