@@ -22,10 +22,10 @@ export class BookSubscriptionComponent implements OnInit {
     });
   }
 
-  onSubmit() {
+  onSubmit(plan: string) {
+    this.subscriptionForm.patchValue({plan: plan});
     if (this.subscriptionForm.valid) {
       this.router.navigate(['/home/subscription/details']);
-      this.showPaymentForm = true;
     }
   }
 }

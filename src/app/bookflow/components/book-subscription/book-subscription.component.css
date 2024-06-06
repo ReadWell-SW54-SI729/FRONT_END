@@ -15,12 +15,13 @@
   display: flex; /* Convertir en un contenedor flex */
   flex-direction: column; /* Apilar elementos verticalmente */
   justify-content: space-between; /* Distribuir el espacio verticalmente */
+  border: 3px solid transparent; /* Asegura que todos tengan borde */
+  animation: glowing-border 2s infinite;
 }
 
 .subscription-option button {
   margin-top: auto; /* Alinear el botón al final del contenedor */
 }
-
 
 .subscription-option:hover {
   transform: translateY(-5px);
@@ -37,7 +38,8 @@
 
 .subscription-option h3 {
   margin-top: 0;
-  font-size: 20px;
+  font-size: 28px; /* Tamaño de fuente más grande */
+  font-weight: bold; /* Texto en negrita */
 }
 
 .subscription-option p {
@@ -46,6 +48,13 @@
 
 .subscription-option ul {
   padding-left: 20px;
+}
+
+.subscription-option hr {
+  border: 0;
+  height: 5px;
+  background: #4d4d4d;
+  margin: 20px 0;
 }
 
 .subscription-option button {
@@ -64,5 +73,14 @@
   background-color: #0056b3;
 }
 
-
-
+@keyframes glowing-border {
+  0% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+  100% {
+    border-color: transparent;
+  }
+}
