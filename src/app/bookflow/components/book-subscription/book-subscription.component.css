@@ -1,0 +1,68 @@
+.plan-selection {
+  display: flex;
+  justify-content: space-between; /* Para distribuir los elementos horizontalmente */
+}
+
+.subscription-option {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 90px 70px; /* Más relleno arriba y abajo */
+  margin: 90px 70px; /* Más margen arriba y abajo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  width: calc(33.33% - 50px); /* El ancho de cada opción, con más espacio entre ellas */
+  font-size: 18px; /* Tamaño de fuente más grande */
+  display: flex; /* Convertir en un contenedor flex */
+  flex-direction: column; /* Apilar elementos verticalmente */
+  justify-content: space-between; /* Distribuir el espacio verticalmente */
+}
+
+.subscription-option button {
+  margin-top: auto; /* Alinear el botón al final del contenedor */
+}
+
+
+.subscription-option:hover {
+  transform: translateY(-5px);
+}
+
+.subscription-option input[type="radio"] {
+  display: none;
+}
+
+.subscription-option label {
+  cursor: pointer;
+  display: block;
+}
+
+.subscription-option h3 {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+.subscription-option p {
+  margin-bottom: 10px;
+}
+
+.subscription-option ul {
+  padding-left: 20px;
+}
+
+.subscription-option button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #f18900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscription-option button:hover {
+  background-color: #0056b3;
+}
+
+
+
