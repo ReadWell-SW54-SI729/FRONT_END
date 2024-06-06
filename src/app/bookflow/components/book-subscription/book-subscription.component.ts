@@ -28,4 +28,8 @@ export class BookSubscriptionComponent implements OnInit {
       this.router.navigate(['/home/subscription/details']);
     }
   }
+
+  onFreePlan() {
+    this.router.navigate(['home/Catalogue']);
+  }
 }

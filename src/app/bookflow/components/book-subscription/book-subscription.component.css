@@ -52,8 +52,8 @@
 
 .subscription-option hr {
   border: 0;
-  height: 5px;
-  background: #4d4d4d;
+  height: 1px;
+  background: #ddd;
   margin: 20px 0;
 }
 

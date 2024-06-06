@@ -23,4 +23,7 @@
     </div>
     <button type="submit" [disabled]="paymentForm.invalid">Procesar Pago</button>
   </form>
+  <div *ngIf="paymentSuccess" class="success-message">
+    Pago realizado con éxito!!
+  </div>
 </div>
