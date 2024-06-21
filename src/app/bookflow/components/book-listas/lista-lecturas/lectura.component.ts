@@ -65,4 +65,7 @@ export class LecturaComponent implements OnInit{
       }
     );
   }
+  redirectToBookDetails(bookisbn: any) {
+    this.router.navigate([`/Catalogue/bookDetail/${bookisbn.id}`]);
+  }
 }

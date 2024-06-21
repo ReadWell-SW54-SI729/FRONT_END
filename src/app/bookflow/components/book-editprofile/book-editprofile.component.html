@@ -6,9 +6,8 @@
         <div class="profile-picture">
           <img [src]="profileImageSrc || './assets/profilePicture.png'" alt="Imagen de Perfil" id="profileImagePreview">
         </div>
-        <div class="form-group">
-          <input type="file" id="profileImage" (change)="onFileChange($event)" accept="image/*">
-        </div>
+        <label class="custom-file-label" for="profileImage">Subir nueva imagen</label>
+        <input type="file" id="profileImage" class="custom-file-input" (change)="onFileChange($event)" accept="image/*">
       </div>
       <div class="form-column">
         <div class="form-group">

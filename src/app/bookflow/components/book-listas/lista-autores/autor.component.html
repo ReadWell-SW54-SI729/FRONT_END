@@ -1,6 +1,6 @@
 <div class="titulo-container">
   <div id="titulo">Lista Autores:</div>
-  <a href="/home/Catalogue"><button class="seguir-button">BACK</button> </a>
+  <a href="/home/Catalogue" class="button-link">Volver</a>
 </div>
 <div class="autor-container">
   <div class="lista-container">
@@ -10,7 +10,9 @@
           <div class="autor-img"><img [src]="book.authorImage" alt="Autor"></div>
           <div class="autor-nombre">{{book.author}}</div>
           <div class="autor-descripcion">{{book.description}}</div>
-          <div class="autor-follow"><button class="seguir-button" (click)="enviarMensaje()">Seguir</button></div>
+          <div class="autor-follow">
+            <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
+          </div>
         </div>
       </mat-card>
     </div>
@@ -23,7 +25,9 @@
           <div class="autor-img"><img [src]="book.authorImage" alt="Autor"></div>
           <div class="autor-nombre">{{book.author}}</div>
           <div class="autor-descripcion">{{book.description}}</div>
-          <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
+          <div class="autor-follow">
+            <button class="seguir-button" (click)="enviarMensaje()">Seguir</button>
+          </div>
         </div>
       </mat-card>
     </div>

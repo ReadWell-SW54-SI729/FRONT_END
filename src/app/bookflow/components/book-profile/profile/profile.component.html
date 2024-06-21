@@ -4,23 +4,22 @@
       <div class="profile-picture">
         <img src="./assets/imagen-joaquin.png" alt="Foto de perfil">
       </div>
-      <h1>{{userData.firstName +' '+userData.lastName}}</h1>
+      <h1>{{userData.firstName + ' ' + userData.lastName}}</h1>
     </div>
     <div class="form-column">
       <p>Age: {{ userData.age }}</p>
       <p>Email: {{userData.email}}</p>
       <p>Description: {{userData.description}}</p>
-      <p>Favorites: </p>
+      <p>Favorites:</p>
       <div *ngFor="let book of userData.bookFavorites">
         <a>- {{ book }}</a>
       </div>
-
     </div>
   </div>
   <div class="submit-button">
     <a href="/home/profile/editprofile">
-      <button type="submit">Editar perfil</button>
+      <button type="button">Editar perfil</button>
     </a>
-    <button mat-button (click)="goToUserClubs()">Ver clubes</button>
+    <button type="button" mat-button (click)="goToUserClubs()">Ver clubes</button>
   </div>
 </div>
