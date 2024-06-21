@@ -12,6 +12,7 @@ import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {MatList, MatListItem} from "@angular/material/list";
 import {BookflowService} from "../../../services/bookflow-service.service";
 import {Router} from "@angular/router";
+import {NgForOf} from "@angular/common";
 
 @Component({
   selector: 'app-profile',
@@ -30,7 +31,8 @@ import {Router} from "@angular/router";
     MatButton,
     MatIcon,
     MatIconButton,
-    MatCardContent
+    MatCardContent,
+    NgForOf
   ],
   styleUrls: ['./profile.component.css']
 })
@@ -59,11 +61,13 @@ export class ProfileComponent implements OnInit{
             data[0].lastName,
             data[0].age,
             data[0].email,
-            data[0].description
+            data[0].description,
+            data[0].bookFavorites
           );
         }
-      });
       }
+    );
+  }
 
 
   goToUserClubs() {

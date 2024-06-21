@@ -86,7 +86,8 @@ export class BookDetailComponent implements OnInit {
             data[0].lastName,
             data[0].age,
             data[0].email,
-            data[0].description
+            data[0].description,
+            data[0].bookFavorites
           );
         }
       });

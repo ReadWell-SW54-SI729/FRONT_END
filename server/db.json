@@ -476,7 +476,11 @@
       "age": "27",
       "email": "joaquin@gmail.com",
       "description": "I'm a book lover who enjoys reading a wide variety of genres. I'm always looking for new recommendations and love discussing books with fellow readers.",
-      "bookFavorites": []
+      "bookFavorites": [
+        "A CALAMITY OF SOULS",
+        "THE ECHO WIFE",
+        "THE MURDER INN"
+      ]
     }
   ]
 }
