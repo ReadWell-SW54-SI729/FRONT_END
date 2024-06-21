@@ -107,7 +107,8 @@ export class ReadingClubComponent implements OnInit{
               user.lastName,
               user.age,
               user.email,
-              user.description
+              user.description,
+              user.bookFavorites
             );
           });
         }

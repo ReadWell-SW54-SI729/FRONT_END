@@ -1,33 +1,37 @@
-<div class = "profile-information">
-  <div class = "profile-info-content">
-    <div class = "profile-picture">
-      <img src="./assets/profilePicture.png" alt="Foto de perfil">
+<div class="container">
+  <h2>Edición de Perfil</h2>
+  <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-column">
+        <div class="profile-picture">
+          <img [src]="profileImageSrc || './assets/profilePicture.png'" alt="Imagen de Perfil" id="profileImagePreview">
+        </div>
+        <div class="form-group">
+          <input type="file" id="profileImage" (change)="onFileChange($event)" accept="image/*">
+        </div>
+      </div>
+      <div class="form-column">
+        <div class="form-group">
+          <label for="email">Correo</label>
+          <input type="email" id="email" formControlName="email" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea id="description" formControlName="description"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="literaryPreferences">Preferencias Literarias</label>
+          <textarea id="literaryPreferences" formControlName="literaryPreferences"></textarea>
+        </div>
+      </div>
     </div>
-    <a href="home/profile">
-      <button class = "icon-button">
-        <p>Guardar cambios</p>
-      </button>
-
-      <button class = "cancel-button">
-        <p>Cancelar</p>
-      </button>
-    </a>
-    <div class = "profile-text">
-      <h2 class="personal-info">Edición de perfil</h2>
-      <label class="mail">Correo</label>
-      <label class="user">Usuario</label>
-      <label class="description">Descripción</label>
-      <label class="preferences">Preferencias literarias</label>
+    <div class="submit-button">
+      <a href="home/profile">
+        <button type="submit" [disabled]="profileForm.invalid">Guardar Cambios</button>
+      </a>
+      <a href="home/profile">
+        <button type="button">Cancelar</button>
+      </a>
     </div>
-    <div class = "bars">
-      <input type="mail-bar" id="Correo" name="Correo" placeholder="david_Williams@hotmail.com"
-             style="background-color: lightsalmon;">
-      <input type="user-bar" id="Usuario" name="Usuario" placeholder="DavidW"
-             style="background-color: lightsalmon;">
-      <input type="description-bar" id="Descripción" name="Descripción" placeholder="Mi nombre es..."
-             style="background-color: lightsalmon;">
-      <input type="preferences-bar" id="Preferencias" name="Preferencias" placeholder="Terror, fantasía, ..."
-             style="background-color: lightsalmon;">
-    </div>
-  </div>
+  </form>
 </div>
