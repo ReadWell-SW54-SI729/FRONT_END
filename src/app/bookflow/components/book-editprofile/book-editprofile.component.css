@@ -5,7 +5,6 @@
   border: 2px solid #000;
   border-radius: 40%;
   overflow: hidden;
-
 }
 
 body {
@@ -29,7 +28,7 @@ h2 {
 .form-row {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .form-column {
   flex: 1;
@@ -69,14 +68,15 @@ h2 {
   flex-wrap: wrap;
 }
 .submit-button button {
-  width: 150px;
   padding: 10px 20px;
+  font-weight: bold;
   border: none;
   background-color: #f18900;
-  color: white;
+  color: black;
   border-radius: 4px;
   cursor: pointer;
 }
 .submit-button button:hover {
   background-color: #e68900;
 }
+
