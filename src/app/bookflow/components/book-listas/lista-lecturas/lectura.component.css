@@ -1,14 +1,28 @@
-/* Estilos generales del contenedor principal */
+#titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.titulo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
 .lectura-container {
   justify-content: center;
-  background-image: url(/assets/fondo1.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin-block: 5rem;
 }
 
 /* Estilos del título redondeado */
@@ -46,7 +60,7 @@
 
 .lista-titulo {
   background-color: #FFD54F;
-  color: white;
+  color: black;
   font-size: 25px;
   padding: 10px 20px;
   border-radius: 20px;
@@ -78,13 +92,14 @@
 
 .libro-description {
   margin-top: 10px;
-  font-weight: bold;
+  text-align: justify;
+  padding: 5px;
   color: black;
 }
 
-/*.ver-button {
-  background-color: #08cd19;
-  color: white;
+.volver-button {
+  background-color: #f18900;
+  color: black;
   border: none;
   padding: 8px 16px;
   text-align: center;
@@ -94,7 +109,24 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-}*/
+  font-weight: bold;
+}
+.volver-button:hover {
+  background-color: #e68900;
+}
+
+.lecture-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.lecture-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
 /* Estilos responsive */
 @media (max-width: 768px) {
