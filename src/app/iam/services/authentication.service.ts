@@ -2,11 +2,11 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {Router} from "@angular/router";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SignInRequest} from "../model/sign-in.request";
-import {SignInResponse} from "../model/sign-in.response";
+import {SignInRequest} from "../../iam/model/sign-in.request";
+import {SignInResponse} from "../../iam/model/sign-in.response";
 import {environment} from "../../../environments/environment";
-import {SignUpRequest} from "../model/sign-up.request";
-import {SignUpResponse} from "../model/sign-up.response";
+import {SignUpRequest} from "../../iam/model/sign-up.request";
+import {SignUpResponse} from "../../iam/model/sign-up.response";
 
 /**
  * Service for authentication.
@@ -41,11 +41,11 @@ export class AuthenticationService {
       .subscribe({
         next: (response) => {
           console.log(`Signed up as ${response.email} with id: ${response.id}`);
-          this.router.navigate(['/sign-in']).then();
+          this.router.navigate(['home/iniciosesion']).then();
         },
         error: (error) => {
           console.error(`Error while signing up: ${error}`);
-          this.router.navigate(['/sign-up']).then();
+          this.router.navigate(['home/registro']).then();
         }
       });
   }
