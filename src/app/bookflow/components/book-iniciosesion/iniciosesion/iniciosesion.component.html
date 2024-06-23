@@ -1,22 +1,21 @@
 <div class="container">
-  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form class="login-form" [formGroup]="form" (submit)="onSubmit()">
     <h2>Login</h2>
     <div class="input-group">
       <label for="username">Username</label>
-      <input type="text" id="username" formControlName="username" required>
-      <!-- Agregar el atributo formControlName y el FormGroup asociado -->
+      <input type="text" placeholder="username" id="username" name="username" required formControlName="username">
+      <mat-error *ngIf="isInvalidControl(form, 'username')">{{ errorMessagesForControl(form, 'username')}}</mat-error>
     </div>
     <div class="input-group">
       <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password" required>
-      <!-- Agregar el atributo formControlName y el FormGroup asociado -->
+      <input type="password" placeholder="password" id="password" name="password" required formControlName="password">
+      <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password')}}</mat-error>
     </div>
-    <button type="submit" [disabled]="loginForm.invalid">Login</button>
-    <!-- Deshabilitar el botón si el formulario es inválido -->
+    <button mat-raised-button color="primary">Sign In</button>
   </form>
-  <div *ngIf="loginSuccess" class="success-message">
+  <!--<div *ngIf="loginSuccess" class="success-message">
     ¡Inicio de sesión exitoso!
-  </div>
+  </div>-->
   <div class="register-link">
     <br>
     <p>¿No tienes una cuenta? <a href="home/registro">Regístrate aquí</a>.</p>

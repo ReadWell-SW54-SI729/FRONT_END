@@ -33,11 +33,3 @@ export class RegistroComponent implements OnInit {
     }
   }
 }
-
-@Component({
-  selector: 'dialog.component',
-  templateUrl: '../../../../public/components/dialog/dialog/dialog.component.html',
-  standalone: true,
-  imports: [MatDialogModule, MatButtonModule],
-})
-export class DialogContentExampleDialog {}
