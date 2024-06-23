@@ -28,16 +28,16 @@ export class IniciosesionComponent extends BaseFormComponent implements OnInit{
 
   ngOnInit(): void {
     this.form= this.builder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
     })
   }
 
   onSubmit(){
     if(this.form.invalid) return;
-    let username= this.form.value.username;
+    let email= this.form.value.email;
     let password= this.form.value.password;
-    const signInRequest= new SignInRequest(username, password);
+    const signInRequest= new SignInRequest(email, password);
     this.authenticationService.signIn(signInRequest);
     this.submitted=true;
   }

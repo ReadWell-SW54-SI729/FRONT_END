@@ -2,9 +2,9 @@
   <form class="login-form" [formGroup]="form" (submit)="onSubmit()">
     <h2>Login</h2>
     <div class="input-group">
-      <label for="username">Username</label>
-      <input type="text" placeholder="username" id="username" name="username" required formControlName="username">
-      <mat-error *ngIf="isInvalidControl(form, 'username')">{{ errorMessagesForControl(form, 'username')}}</mat-error>
+      <label for="email">Email</label>
+      <input type="email" placeholder="Email" id="email" name="email" required formControlName="email">
+      <mat-error *ngIf="isInvalidControl(form, 'email')">{{ errorMessagesForControl(form, 'email')}}</mat-error>
     </div>
     <div class="input-group">
       <label for="password">Password</label>
@@ -12,6 +12,7 @@
       <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password')}}</mat-error>
     </div>
     <button mat-raised-button color="primary">Sign In</button>
+    <!--<button mat-raised-button color="primary" [disabled]="form.invalid">Sign In</button>-->
   </form>
   <!--<div *ngIf="loginSuccess" class="success-message">
     ¡Inicio de sesión exitoso!
