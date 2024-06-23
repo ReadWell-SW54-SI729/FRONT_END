@@ -1,62 +1,144 @@
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
+  background-color: #f5f5f5; /* Fondo neutro y claro para buena legibilidad */
+  color: #333; /* Color de texto oscuro para mejor contraste */
 }
 
-.profile {
-  max-width: 400px;
+/* Container */
+.container {
+  max-width: 800px;
   margin: 50px auto;
-  background-color: #fff;
-  border-radius: 10px;
   padding: 20px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Blanco para limpieza y claridad */
+  border-radius: 12px; /* Bordes más suaves para un aspecto moderno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-.buttom {
-  background-color: #FFB74B;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  display: block;
+/* Profile picture */
+.profile-picture {
+  width: 250px;
+  height: 250px; /* Hacemos el perfil cuadrado para consistencia */
   margin: 0 auto;
-  width: fit-content;
-  transition: box-shadow 0.3s ease;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  margin-block: 2rem;
+  border: 3px solid #f18900; /* Borde anaranjado para destacar */
+  border-radius: 50%; /* Totalmente redondo para un perfil profesional */
+  overflow: hidden;
 }
 
-.buttom:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.buttom:active {
-    background-color: #FF9800;
-    box-shadow: none;
-}
-
-.profile img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  display: block;
-  margin: 0 auto 20px;
-}
-
-.profile h1 {
+/* Headings */
+h1, h2 {
   text-align: center;
-  margin: 0;
-  color: #333;
+  color: #f18900; /* Naranja para destacar */
 }
 
-.profile p {
-  margin: 10px 0;
-  color: #666;
+h2 {
+  margin-bottom: 20px;
 }
 
-.profile p:first-child {
-  margin-top: 0;
+/* Form layout */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.form-column {
+  flex: 1;
+  min-width: 300px; /* Mayor espacio mínimo para mejor distribución */
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para claridad */
+  border-radius: 8px; /* Bordes suaves */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px; /* Espaciado entre columnas */
+}
+
+.form-column h1 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.form-column p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #555; /* Gris para información secundaria */
+}
+
+/* Favorites list */
+.form-column div a {
+  display: block;
+  color: #f18900; /* Anaranjado para enlaces */
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.form-column div a:hover {
+  text-decoration: underline;
+}
+
+/* Form groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555; /* Gris medio para etiquetas */
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px; /* Mayor altura mínima para textarea */
+}
+
+.form-group input[type="file"] {
+  padding: 3px;
+}
+
+/* Submit button */
+.submit-button {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.submit-button a, .submit-button button {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  background-color: #f18900; /* Naranja brillante */
+  color: #fff; /* Blanco para el texto */
+  border-radius: 8px; /* Bordes suaves */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Sin subrayado en enlaces */
+  margin: 10px; /* Espaciado entre botones */
+}
+
+.submit-button a:hover, .submit-button button:hover {
+  background-color: #e68900; /* Naranja oscuro en hover */
 }

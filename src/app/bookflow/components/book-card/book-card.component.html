@@ -1,27 +1,37 @@
 <div class="container">
   <div id="catalogo">Catálogo:</div>
+</div>
+
+<div class="bar">
   <div class="button-container">
-    <a href="/home/tendencia" class="orange-button" style="text-decoration: none;">Tendencias</a>
-    <button mat-button class="orange-button" (click)="goAuthors()" >Autores</button>
-    <button mat-button class="orange-button" (click)="goLectures()" >Mi Lista</button>
-  </div>>
-  <mat-form-field color="accent" role="search">
-    <mat-label id="search">Buscar</mat-label>
-    <input matInput aria-label="Search name" (keyup)="ApplyFilter($event)">
-  </mat-form-field>
+    <a href="/home/tendencia"><button mat-button class="orange-button">Tendencias</button></a>
+    <button mat-button class="orange-button" (click)="goAuthors()">Autores</button>
+    <button mat-button class="orange-button" (click)="goLectures()">Mi Lista</button>
+    <button mat-button class="orange-button" (click)="goReadingClub()">Clubs de Lectura</button>
+  </div>
+  <div class="buscar-filtros">
+    <mat-form-field appearance="fill">
+      <mat-label>Seleccionar Géneros</mat-label>
+      <mat-select multiple [(value)]="selectedGenres" (selectionChange)="filterBooks()">
+        <mat-option *ngFor="let genre of genres" [value]="genre.name">
+          {{ genre.name }} ({{ genre.count }})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field color="accent" role="search">
+      <mat-label id="search">Buscar</mat-label>
+      <input matInput aria-label="Search name" (keyup)="applyFilter($event)">
+    </mat-form-field>
+  </div>
 </div>
 
 
-<div class="filter">
-  <button mat-button class="filter-button" (click)="filterBooks('Todos')">Todos</button>
-  <button mat-button *ngFor="let genre of genres" class="filter-button" (click)="filterBooks(genre)">{{genre}}</button>
-</div>
 
 <div class="books-container" aria-labelledby="Page">
   <mat-card *ngFor="let book of books" class="book-card" role="article" aria-labelledby="book-title" (click)="getDetails(book)">
     <img mat-card-image [src]="book.img" alt="Imagen del libro" role="img" aria-label="meal image">
     <mat-card-header>
-      <mat-card-title role="heading" aria-level="2">{{book.name}}</mat-card-title>
+      <mat-card-title role="heading" aria-level="2">{{ book.name }}</mat-card-title>
     </mat-card-header>
   </mat-card>
 </div>

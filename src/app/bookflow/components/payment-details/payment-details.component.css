@@ -1,0 +1,71 @@
+.payment-form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.payment-form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.payment-form-container .form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.payment-form-container label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+  font-size: 16px;
+}
+
+.payment-form-container input[type="text"],
+.payment-form-container input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.payment-form-container input[type="text"],
+.payment-form-container input[type="email"] {
+  width: 100%; /* Cambia el valor de width según lo necesites */
+  max-width: 380px; /* Establece un ancho máximo para evitar que las cajas de texto se extiendan demasiado */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+.payment-form-container input[type="submit"],
+.payment-form-container button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #f18900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.payment-form-container input[type="submit"]:hover,
+.payment-form-container button:hover {
+  background-color: #0056b3;
+}
+
+.success-message {
+  color: green;
+  margin-top: 10px;
+}
+

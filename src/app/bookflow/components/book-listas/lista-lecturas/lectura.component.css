@@ -1,58 +1,85 @@
-/* Estilos generales del contenedor principal */
+/* General reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+  background-color: #f4f4f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Título */
+#titulo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffbc5e;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor de Título */
+.titulo-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Botón de Enlace */
+.button-link,
+.volver-button {
+  background-color: orange;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.1rem;
+}
+
+.button-link:hover,
+.volver-button:hover {
+  background-color: #e68900;
+  transform: scale(1.05);
+}
+
+/* Contenedor de Lectura */
 .lectura-container {
   justify-content: center;
-  background-image: url(/assets/fondo1.jpg);
-  background-size: cover;
-  background-position: center;
+  background-color: rgba(255, 255, 255, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  margin-block: 5rem;
 }
 
-/* Estilos del título redondeado */
-.titulo-container {
-  margin-bottom: 20px;
-}
-
-.button-link {
-  background-color: orange; /* Color de fondo naranja */
-  color: white; /* Color de texto blanco */
-  padding: 0.7rem 1.5rem; /* Ajuste de espaciado interno */
-  border-radius: 5px; /* Borde redondeado */
-  text-decoration: none; /* Quitar subrayado */
-  border: none; /* Quitar borde */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras */
-  transition: transform 0.3s, box-shadow 0.3s; /* Transición de efectos */
-  font-size: 1.1rem; /* Tamaño de la fuente */
-  margin-left: 80rem;
-  margin-top: -10rem; /* Mover hacia arriba */
-
-}
-
-.titulo {
-  background-color: #FFD54F;
-  color: white;
-  font-size: 28px;
-  padding: 10px 20px;
-  border-radius: 20px;
-}
-
-/* Estilos de las listas */
+/* Contenedor de Listas */
 .lista-container {
   margin-bottom: 40px;
+  width: 95vw;
 }
 
+/* Título de Lista */
 .lista-titulo {
   background-color: #FFD54F;
-  color: white;
+  color: black;
   font-size: 25px;
   padding: 10px 20px;
   border-radius: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Estilos de los libros */
+/* Contenedor de Libros */
 .lista-libros {
   display: flex;
   flex-wrap: wrap;
@@ -60,14 +87,26 @@
   justify-content: center;
 }
 
+/* Tarjeta de Libro */
 .libro {
   width: 200px;
   text-align: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.libro:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .libro img {
   width: 100%;
-  border-radius: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .libro-nombre {
@@ -78,12 +117,14 @@
 
 .libro-description {
   margin-top: 10px;
-  font-weight: bold;
+  text-align: justify;
+  padding: 5px;
   color: black;
 }
 
-/*.ver-button {
-  background-color: #08cd19;
+/* Botón de Ver */
+.ver-button {
+  background-color: #f18900;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -94,9 +135,14 @@
   margin: 4px 2px;
   cursor: pointer;
   border-radius: 4px;
-}*/
+  font-weight: bold;
+}
 
-/* Estilos responsive */
+.ver-button:hover {
+  background-color: #e68900;
+}
+
+/* Estilos Responsive */
 @media (max-width: 768px) {
   .libro {
     width: 150px;
@@ -106,5 +152,15 @@
 @media (max-width: 480px) {
   .libro {
     width: 120px;
+  }
+
+  #titulo {
+    font-size: 2rem;
+  }
+
+  .button-link,
+  .volver-button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
   }
 }

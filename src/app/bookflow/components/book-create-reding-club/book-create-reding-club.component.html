@@ -1,0 +1,35 @@
+<div class="container">
+  <mat-card class="create-club-card">
+    <mat-card-header>
+      <mat-card-title>Crear Nuevo Club de Lectura</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="createClub()" #clubForm="ngForm" class="club-form">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Nombre del Club</mat-label>
+          <input matInput name="clubName" [(ngModel)]="clubName" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Descripción</mat-label>
+          <textarea matInput name="description" [(ngModel)]="description" required></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Fecha de inicio</mat-label>
+          <input matInput name="meetingDate" [(ngModel)]="meetingDate" type="date" required>
+        </mat-form-field>
+        <div class="book-selection">
+          <button mat-raised-button color="primary" (click)="openBookDialog()">Seleccionar Libro</button>
+        </div>
+        <div *ngIf="chosenBookImage" class="book-image">
+          <img [src]="chosenBookImage" alt="Imagen del libro">
+        </div>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" [disabled]="!chosenBook || clubForm.invalid">Crear Club</button>
+        </div>
+        <div class="button-container2">
+          <button mat-raised-button color="primary" type="submit" (click)="goBack()">Back</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

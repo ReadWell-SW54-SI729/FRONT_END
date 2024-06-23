@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# FRONT_END
+Front end del proyecto BookFlow
+=======
 # FrontendBookflowTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.

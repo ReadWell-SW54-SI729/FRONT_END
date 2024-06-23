@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatIcon} from "@angular/material/icon";
-import {MatIconButton} from "@angular/material/button";
+import { Component, OnInit } from '@angular/core';
+import { MatToolbar } from "@angular/material/toolbar";
+import { MatIcon } from "@angular/material/icon";
+import { MatIconButton } from "@angular/material/button";
 
 @Component({
   selector: 'app-header',
@@ -14,8 +14,15 @@ import {MatIconButton} from "@angular/material/button";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
+  showMenu: boolean = false;
 
+  constructor() { }
 
+  ngOnInit(): void {
+  }
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
 }
-

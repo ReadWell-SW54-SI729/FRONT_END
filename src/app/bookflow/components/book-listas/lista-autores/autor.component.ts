@@ -49,7 +49,7 @@ export class AutorComponent implements OnInit {
               book.amazonBookUrl
             );
           });
-          console.log(this.books); // Agregar esta línea para imprimir los libros en la consola
+          this.books = this.getUniqueAuthors(this.books);
         } else {
           console.error('No books data found in the response.');
         }
@@ -74,4 +74,13 @@ export class AutorComponent implements OnInit {
       verticalPosition: 'bottom'
     });
   }
+  getUniqueAuthors(books: any[]): any[] {
+    const seen = new Set();
+    return books.filter(book => {
+      const duplicate = seen.has(book.author);
+      seen.add(book.author);
+      return !duplicate;
+    });
+  }
+
 }

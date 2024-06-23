@@ -1,26 +1,43 @@
-<div class="container" aria-labelledby="Page">
+<div class="container" aria-labelledby="Page" [style.font-size]="fontSize">
   <mat-card class="book-card" role="article" aria-labelledby="book-title">
     <div class="book-info">
       <!-- Imagen del libro -->
-      <div class="book-image">
-        <img mat-card-image [src]="bookData.img" alt="Imagen del libro" role="img" aria-label="meal image">
-      </div>
-      <!-- Mini tarjeta para los datos del libro -->
-      <mat-card class="book-details-card" role="article">
-        <mat-card-header>
-          <!-- Título del libro -->
-          <mat-card-title role="heading" aria-level="2">{{bookData.name}}</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <!-- Descripción del libro -->
-          <p role="article" aria-labelledby="book-description">{{bookData.description}}</p>
-          <!-- Autor del libro -->
-          <p role="article" aria-labelledby="book-author">Autor: {{bookData.author}}</p>
-        </mat-card-content>
-      </mat-card>
+      <mat-card-header class="book-header">
+        <img mat-card-image [src]="bookData.img" alt="{{ bookData.name }}" />
+      </mat-card-header>
+      <!-- Detalles del libro -->
+      <mat-card-content class="book-details">
+        <h2 mat-card-title>{{ bookData.name }}</h2>
+        <p class="book-genre">Género: {{ bookData.genre }}</p>
+        <p class="book-description">{{ bookData.description }}</p>
+        <p class="book-author">Autor: {{ bookData.author }}</p>
+        <img mat-card-image [src]="bookData.authorImage" alt="{{ bookData.author }}" class="author-image" />
+        <p class="book-publisher">Editorial: {{ bookData.publisher }}</p>
+      </mat-card-content>
+    </div>
+    <!-- Botón para leer ahora y regresar a la pantalla anterior -->
+    <div class="book-actions">
+      <button mat-raised-button color="primary" (click)="readNow()">Leer Ahora</button>
+      <button mat-raised-button color="accent" (click)="recommend()">Recomendar libro</button>
+      <button mat-raised-button (click)="goBack()">Volver</button>
+    </div>
+    <!-- Botones de configuración y agregar marcadores/notas -->
+    <div class="reading-options">
+      <button mat-raised-button (click)="adjustFontSize()">Tamaño de letra</button>
+      <button mat-raised-button class="bookmark-button" [class.marked]="isBookmarked" (click)="toggleBookmark(bookData.id,userData.id)">Agregar Marcador</button>
+    </div>
+    <!-- Selección de tamaño de letra -->
+    <div *ngIf="showFontSizeSelector" class="font-size-selector">
+      <label for="fontSize">Tamaño de letra:</label>
+      <select id="fontSize" [(ngModel)]="selectedFontSize">
+        <option value="12px">12</option>
+        <option value="16px">16</option>
+        <option value="20px">20</option>
+      </select>
+      <button mat-raised-button color="primary" (click)="applyFontSize()">Aplicar</button>
     </div>
     <!-- Botón para agregar comentario -->
-    <div class="button">
+    <div class="comment-button">
       <button mat-raised-button color="primary" (click)="agregarComentario()">Agregar Comentario</button>
     </div>
   </mat-card>

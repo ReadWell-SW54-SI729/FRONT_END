@@ -8,7 +8,6 @@ export class Book {
   authorImage:any;
   publisher:any;
   bookUrl:any;
-
   constructor(id:any,name:any,genre:any, img:any, description:any, author:any, authorImage:any, publisher:any, bookUrl:any) {
     this.id=id;
     this.name = name;

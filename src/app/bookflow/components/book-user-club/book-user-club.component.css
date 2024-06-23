@@ -1,0 +1,151 @@
+/* General page styling with background and color scheme */
+body {
+  font-family: 'Arial, sans-serif';
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #FF7F50, #FFD700); /* Orange to Yellow gradient */
+  color: #333;
+}
+
+.mat-flat-button.create-club-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.mat-flat-button.create-club-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+.mat-flat-button.create-club-button2 {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* Asegura que el botón esté por encima de otros elementos */
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.mat-flat-button.create-club-button2:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+/* Ajuste de márgenes para dispositivos pequeños */
+
+
+@media screen and (max-width: 600px) {
+  /* Restablece la posición de los botones */
+  .mat-flat-button.create-club-button,
+  .mat-flat-button.create-club-button2 {
+    position: relative;
+    bottom: auto;
+    right: auto;
+  }
+
+  /* Ajusta el ancho y margen de los botones */
+  .mat-flat-button.create-club-button,
+  .mat-flat-button.create-club-button2 {
+    width: calc(100% - 40px);
+    margin: 0 auto 10px;
+  }
+}
+/* Ensure the container is centered and responsive */
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 200px;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  border-radius: 10px;
+  margin: 20px;
+}
+
+/* Style individual book cards */
+.book-card {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+}
+
+.book-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Style card header */
+.mat-card-header {
+  background-color: #FF7F50; /* Orange */
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 16px;
+}
+
+.mat-card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/* Style card image */
+mat-card-image {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Style card content */
+.mat-card-content {
+  padding: 16px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.mat-card-content p {
+  margin: 0 0 10px;
+}
+
+.mat-card-content p strong {
+  color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .mat-card-title {
+    font-size: 1.1rem;
+  }
+
+  .mat-card-content {
+    padding: 12px;
+    font-size: 0.85rem;
+  }
+
+  mat-card-image {
+    height: 180px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .books-container {
+    gap: 30px;
+    padding: 30px;
+  }
+
+  .book-card {
+    max-width: 400px;
+  }
+}
+

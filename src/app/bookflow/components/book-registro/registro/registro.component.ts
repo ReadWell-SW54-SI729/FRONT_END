@@ -1,49 +1,36 @@
-import { Component } from '@angular/core';
-import {RegistrarService} from "../../../services/registrar/registrar.service";
-import {FormsModule} from "@angular/forms";
-import { Router } from '@angular/router';
-import {MatDialog, MatDialogModule} from '@angular/material/dialog';
-import {MatButtonModule} from '@angular/material/button';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {Router, RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [
-    FormsModule, MatButtonModule, MatDialogModule
-  ],
+  imports: [ReactiveFormsModule, RouterModule],
   templateUrl: './registro.component.html',
-  styleUrl: './registro.component.css'
+  styleUrls: ['./registro.component.css']
 })
-export class RegistroComponent {
-  firstname: string = '';
-  lastname: string = '';
-  email: string = '';
-  password: string = '';
+export class RegistroComponent implements OnInit {
+  registerForm!: FormGroup;
 
-  constructor(private postService: RegistrarService, private router: Router, public dialog: MatDialog) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogContentExampleDialog);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  sendData() {
-    const data = {
-      firstname: this.firstname,
-      lastname: this.lastname,
-      email: this.email,
-      password: this.password
+  onRegister() {
+    if (this.registerForm.valid) {
+      // Aquí puedes agregar la lógica para registrar al usuario
+      console.log(this.registerForm.value);
+
+      // Redirigir al usuario a /home/subscription después de registrar
+      this.router.navigate(['/home/subscription']);
     }
-    this.postService.postData(data).subscribe(response => {
-      console.log('Response from API:', response);
-      this.openDialog();
-      this.router.navigate(['/home']);
-    }, error => {
-      console.error('Error:', error);
-    });
   }
 }
 

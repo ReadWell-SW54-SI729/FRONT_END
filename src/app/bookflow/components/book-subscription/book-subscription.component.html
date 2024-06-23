@@ -1,0 +1,44 @@
+<div class="plan-selection">
+  <div class="subscription-option">
+    <input type="radio" formControlName="plan" value="trial" id="trialPlan">
+    <label for="trialPlan">
+      <h3>Plan de Prueba</h3>
+      <hr>
+      <p>Un mes gratis, luego $19.99/mes</p>
+      <ul>
+        <li>Acceso completo a contenido exclusivo durante el período de prueba.</li>
+        <li>Cancela en cualquier momento.</li>
+      </ul>
+    </label>
+    <button type="button" (click)="onSubmit('trial')">Suscribirse</button>
+  </div>
+
+  <div class="subscription-option">
+    <input type="radio" formControlName="plan" value="free" id="freePlan">
+    <label for="freePlan">
+      <h3>Plan Gratuito</h3>
+      <hr>
+      <p>Sin beneficios adicionales</p>
+      <ul>
+        <li>Acceso limitado a contenido público.</li>
+        <li>No incluye acceso a contenido exclusivo.</li>
+      </ul>
+    </label>
+    <button type="button" (click)="onFreePlan()">Comenzar</button>
+  </div>
+
+  <div class="subscription-option">
+    <input type="radio" formControlName="plan" value="premium" id="premiumPlan">
+    <label for="premiumPlan">
+      <h3>Plan Premium</h3>
+      <hr>
+      <p>$29.99 por 3 meses con un 25% de descuento</p>
+      <ul>
+        <li>Acceso completo a todo el contenido exclusivo durante 3 meses.</li>
+        <li>Acceso anticipado a nuevos lanzamientos y eventos.</li>
+        <li>Soporte prioritario al cliente.</li>
+      </ul>
+    </label>
+    <button type="button" (click)="onSubmit('premium')">Suscribirse</button>
+  </div>
+</div>

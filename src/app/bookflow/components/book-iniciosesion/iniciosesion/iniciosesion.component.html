@@ -1,18 +1,22 @@
 <div class="container">
-  <form class="login-form">
+  <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <h2>Login</h2>
     <div class="input-group">
       <label for="username">Username</label>
-      <input type="text" id="username" name="username" required>
+      <input type="text" id="username" formControlName="username" required>
+      <!-- Agregar el atributo formControlName y el FormGroup asociado -->
     </div>
     <div class="input-group">
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" formControlName="password" required>
+      <!-- Agregar el atributo formControlName y el FormGroup asociado -->
     </div>
-    <a href="home/Catalogue">
-      <button type="button">Login</button>
-    </a>
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <!-- Deshabilitar el botón si el formulario es inválido -->
   </form>
+  <div *ngIf="loginSuccess" class="success-message">
+    ¡Inicio de sesión exitoso!
+  </div>
   <div class="register-link">
     <br>
     <p>¿No tienes una cuenta? <a href="home/registro">Regístrate aquí</a>.</p>

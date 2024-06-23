@@ -1,0 +1,84 @@
+.plan-selection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.subscription-option {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 40px); /* Tamaño del contenedor ajustable con margen */
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.subscription-option:hover {
+  transform: translateY(-5px);
+}
+
+.subscription-option input[type="radio"] {
+  display: none;
+}
+
+.subscription-option label {
+  cursor: pointer;
+  display: block;
+}
+
+.subscription-option h3 {
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subscription-option hr {
+  border: 0;
+  height: 1px;
+  background: #ddd;
+  margin: 20px 0;
+}
+
+.subscription-option p {
+  color: #666;
+}
+
+.subscription-option ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.subscription-option ul li {
+  margin-bottom: 10px;
+}
+
+.subscription-option button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
+  background-color: #f18900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.subscription-option button:hover {
+  background-color: #e07a00;
+}
+
+@media (max-width: 768px) {
+  .subscription-option {
+    width: calc(50% - 40px); /* Dos columnas en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .subscription-option {
+    width: calc(100% - 40px); /* Una columna en pantallas pequeñas */
+  }
+}
