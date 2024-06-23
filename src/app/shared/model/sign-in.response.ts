@@ -1,12 +1,12 @@
 export class SignInResponse {
 
   public id: number;
-  public username: string;
+  public email: string;
   public token: string;
 
-  constructor(id: number, username: string, token: string) {
+  constructor(id: number, email: string, token: string) {
     this.token = token;
-    this.username = username;
+    this.email = email;
     this.id = id;
   }
 

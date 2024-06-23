@@ -27,7 +27,7 @@ export class RegistroComponent extends BaseFormComponent implements OnInit{
     this.form = this.builder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required]
     })
   }
@@ -36,9 +36,9 @@ export class RegistroComponent extends BaseFormComponent implements OnInit{
     if(this.form.invalid) return;
     let firstName= this.form.value.firstName;
     let lastName= this.form.value.lastName;
-    let username= this.form.value.username;
+    let email= this.form.value.email;
     let password= this.form.value.password;
-    const signUpRequest = new SignUpRequest(username, password);
+    const signUpRequest = new SignUpRequest(firstName, lastName, email, password);
     this.authenticationService.signUp(signUpRequest);
     this.submitted = true;
   }

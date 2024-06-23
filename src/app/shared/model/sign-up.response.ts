@@ -1,10 +1,10 @@
 export class SignUpResponse {
 
   public id: number;
-  public username: string;
+  public email: string;
 
-  constructor(id: number, username: string) {
-    this.username = username;
+  constructor(id: number, email: string) {
+    this.email = email;
     this.id = id;
   }
 }

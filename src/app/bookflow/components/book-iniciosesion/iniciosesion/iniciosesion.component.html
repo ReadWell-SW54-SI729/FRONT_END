@@ -8,10 +8,10 @@
     </div>
     <div class="input-group">
       <label for="password">Password</label>
-      <input type="password" placeholder="password" id="password" name="password" required formControlName="password">
+      <input type="password" placeholder="Password" id="password" name="password" required formControlName="password">
       <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password')}}</mat-error>
     </div>
-    <button mat-raised-button color="primary">Sign In</button>
+    <button type="submit">Sign In</button>
     <!--<button mat-raised-button color="primary" [disabled]="form.invalid">Sign In</button>-->
   </form>
   <!--<div *ngIf="loginSuccess" class="success-message">
