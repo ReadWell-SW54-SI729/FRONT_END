@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import {Router, RouterModule} from '@angular/router';
 import {BaseFormComponent} from "../../../../shared/components/base-form.component";
-import {SignUpRequest} from "../../../../shared/model/sign-up.request";
-import {AuthenticationService} from "../../../../shared/services/authentication.service";
+import {SignUpRequest} from "../../../../iam/model/sign-up.request";
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
 import {MatError} from "@angular/material/form-field";
 import {NgIf} from "@angular/common";
 
@@ -25,20 +25,19 @@ export class RegistroComponent extends BaseFormComponent implements OnInit{
 
   ngOnInit(): void {
     this.form = this.builder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', Validators.required],
-      password: ['', Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required],
+      roles: ['ROLE_USER', Validators.required]
+
     })
   }
 
   onSubmit(){
     if(this.form.invalid) return;
-    let firstName= this.form.value.firstName;
-    let lastName= this.form.value.lastName;
-    let email= this.form.value.email;
+    let username= this.form.value.username;
     let password= this.form.value.password;
-    const signUpRequest = new SignUpRequest(firstName, lastName, email, password);
+    let roles = this.form.value.password;
+    const signUpRequest = new SignUpRequest(username, password);
     this.authenticationService.signUp(signUpRequest);
     this.submitted = true;
   }

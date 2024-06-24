@@ -2,24 +2,14 @@
   <form class="register-form" [formGroup]="form" (submit)="onSubmit()">
     <h2>Register</h2>
     <div class="input-group">
-      <label for="firstname">First Name</label>
-      <input type="text" placeholder="First Name" id="firstname" name="firstname" required formControlName="firstname">
-      <mat-error *ngIf="isInvalidControl(form, 'firstname')">{{ errorMessagesForControl(form, 'firstname')}}</mat-error>
-    </div>
-    <div class="input-group">
-      <label for="lastname">Last Name</label>
-      <input type="text" placeholder="Last Name" id="lastname" name="lastname" required formControlName="lastname">
-      <mat-error *ngIf="isInvalidControl(form, 'lastname')">{{ errorMessagesForControl(form, 'lastname')}}</mat-error>
-    </div>
-    <div class="input-group">
       <label for="email">Email</label>
       <input type="email" placeholder="email" id="email" name="email" required formControlName="email">
-      <mat-error *ngIf="isInvalidControl(form, 'email')">{{ errorMessagesForControl(form, 'email')}}</mat-error>
+      <mat-error *ngIf="isInvalidControl(form, 'email')">{{ errorMessagesForControl(form, 'email') }}</mat-error>
     </div>
     <div class="input-group">
       <label for="password">Password</label>
       <input type="password" placeholder="password" id="password" name="password" required formControlName="password">
-      <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password')}}</mat-error>
+      <mat-error *ngIf="isInvalidControl(form, 'password')">{{ errorMessagesForControl(form, 'password') }}</mat-error>
     </div>
     <button type="submit">Register</button>
   </form>

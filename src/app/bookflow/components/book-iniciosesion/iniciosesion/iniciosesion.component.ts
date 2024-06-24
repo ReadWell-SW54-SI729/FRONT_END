@@ -5,8 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import {MatCard} from "@angular/material/card"; // Importa Router
 import {BaseFormComponent} from "../../../../shared/components/base-form.component";
-import {AuthenticationService} from "../../../../shared/services/authentication.service";
-import {SignInRequest} from "../../../../shared/model/sign-in.request";
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
+import {SignInRequest} from "../../../../iam/model/sign-in.request";
 import {MatError} from "@angular/material/form-field";
 import {MatButton} from "@angular/material/button";
 
