@@ -57,15 +57,15 @@ export class BookCardComponent implements OnInit{
         if (data && data.length > 0) {
           this.books = data.map((book: any) => {
             return new Book(
-              book.bookIsbn,
+              book.bookId,
               book.bookTitle,
-              book.bookGenre,
+              book.bookGenreId,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
               book.bookAuthorImage,
               book.bookPublisher,
-              book.amazonBookUrl
+              book.bookRank
             );
           });
           this.updateGenreCounts();

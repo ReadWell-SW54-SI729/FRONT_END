@@ -7,12 +7,12 @@ import {catchError, EMPTY, switchMap, tap, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class  BookflowService {
-  baseUrl: string = environment.baseUrl; // muetsra todos los libros
+  baseUrl: string = "http://localhost:3000/api/v1"; // muetsra todos los libros
   constructor(private Http:HttpClient) { }
   lastId = 9;
 
   getBooks(){
-    return this.Http.get<any>(`${this.baseUrl}/books`).pipe(
+    return this.Http.get<any>(`http://localhost:8080/api/v1/books`).pipe(
       tap((response) => console.log('API Response:', response))
     );
   }

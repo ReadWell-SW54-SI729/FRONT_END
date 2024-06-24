@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
-import {Router} from "@angular/router";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {SignInRequest} from "../../iam/model/sign-in.request";
-import {SignInResponse} from "../../iam/model/sign-in.response";
-import {environment} from "../../../environments/environment";
-import {SignUpRequest} from "../../iam/model/sign-up.request";
-import {SignUpResponse} from "../../iam/model/sign-up.response";
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Router } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SignInRequest } from '../model/sign-in.request';
+import { SignInResponse } from '../model/sign-in.response';
+import { environment } from '../../../environments/environment';
+import { SignUpRequest } from '../model/sign-up.request';
+import { SignUpResponse } from '../model/sign-up.response';
 
 /**
  * Service for authentication.
@@ -14,22 +14,28 @@ import {SignUpResponse} from "../../iam/model/sign-up.response";
  * This service provides methods for signing up, signing in, and signing out.
  * It also provides observables for the signed in status, the signed-in user ID, and the signed-in username.
  */
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   basePath: string = `${environment.serverBasePath}`;
-  httpOptions = { headers: new HttpHeaders({'Content-type': 'application/json'}) };
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
   private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInUsername: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) {}
 
-  get isSignedIn() { return this.signedIn.asObservable();}
+  get isSignedIn() {
+    return this.signedIn.asObservable();
+  }
 
-  get currentUserId() { return this.signedInUserId.asObservable(); }
+  get currentUserId() {
+    return this.signedInUserId.asObservable();
+  }
 
-  get currentUsername() { return this.signedInUsername.asObservable(); }
+  get currentUsername() {
+    return this.signedInUsername.asObservable();
+  }
 
   /**
    * Sign up a new user.
@@ -37,15 +43,16 @@ export class AuthenticationService {
    * @returns The sign up response.
    */
   signUp(signUpRequest: SignUpRequest) {
+    console.log(signUpRequest);
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
       .subscribe({
         next: (response) => {
-          console.log(`Signed up as ${response.email} with id: ${response.id}`);
-          this.router.navigate(['home/iniciosesion']).then();
+          console.log(`Signed up as ${response.username} with id: ${response.id}`);
+          this.router.navigate(['/sign-in']).then();
         },
         error: (error) => {
           console.error(`Error while signing up: ${error}`);
-          this.router.navigate(['home/registro']).then();
+          this.router.navigate(['/sign-up']).then();
         }
       });
   }
@@ -90,4 +97,3 @@ export class AuthenticationService {
     this.router.navigate(['/sign-in']).then();
   }
 }
-

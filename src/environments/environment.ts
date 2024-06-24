@@ -1,3 +1,4 @@
 export const environment = {
-  serverBasePath: undefined
+  production: false,
+  serverBasePath: "http://localhost:8080/api/v1"
 };
