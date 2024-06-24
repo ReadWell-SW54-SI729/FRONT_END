@@ -38,7 +38,23 @@
     </div>
     <!-- Botón para agregar comentario -->
     <div class="comment-button">
-      <button mat-raised-button color="primary" (click)="agregarComentario()">Agregar Comentario</button>
+      <button mat-raised-button color="primary" (click)="toggleCommentForm()">Agregar Comentario</button>
+    </div>
+
+    <!-- Formulario de comentario -->
+    <div *ngIf="showCommentForm" class="comment-form">
+      <mat-form-field>
+        <textarea matInput placeholder="Escriba su comentario..." [(ngModel)]="nuevoComentario"></textarea>
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="publicarComentario()">Publicar</button>
+    </div>
+
+    <!-- Lista de comentarios -->
+    <div class="comment-list">
+      <h3>Comentarios:</h3>
+      <div *ngFor="let comentario of comentarios" class="comment-item">
+        <p>{{ comentario }}</p>
+      </div>
     </div>
   </mat-card>
 </div>

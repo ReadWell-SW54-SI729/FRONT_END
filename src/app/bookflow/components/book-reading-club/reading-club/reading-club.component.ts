@@ -50,15 +50,15 @@ export class ReadingClubComponent implements OnInit{
         if (data && data.length > 0) {
           this.books = data.map((book: any) => {
             return new Book(
-              book.bookIsbn,
+              book.bookId,
               book.bookTitle,
-              book.bookGenre,
+              book.bookGenreId,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
               book.bookAuthorImage,
               book.bookPublisher,
-              book.amazonBookUrl
+              book.bookRank
             );
           });
           console.log(this.books); // Agregar esta línea para imprimir los libros en la consola
@@ -72,18 +72,19 @@ export class ReadingClubComponent implements OnInit{
       }
     );
   }
+
   getClubs() {
     this.bookService.getClubs().subscribe(
       (data: any[]) => {
         if (data && data.length > 0) {
           this.clubs = data.map((club: any) => {
             return new ReadingClub(
-              club.id,
-              club.name,
+              club.clubId,
+              club.clubName,
               club.meetingDate,
-              club.bookIsbn,
-              club.description,
-              club.users
+              club.bookId,
+              club.clubDescription,
+              club.userId
             );
           });
           console.log(this.clubs); // Agregar esta línea para imprimir los clubes en la consola
@@ -96,6 +97,11 @@ export class ReadingClubComponent implements OnInit{
       }
     );
   }
+
+  getBookImage(bookId: any): string | undefined {
+    const bookImage = bookId.bookImage;
+    return bookImage;
+  }
   getUsers() {
     this.bookService.getUser().subscribe(
       (data: any[]) => {
@@ -103,21 +109,15 @@ export class ReadingClubComponent implements OnInit{
           this.users = data.map((user: any) => {
             return new User(
               user.id,
-              user.firstName,
-              user.lastName,
-              user.age,
-              user.email,
-              user.description,
-              user.bookFavorites
+              user.username,
+              user.role
             );
           });
         }
       }
     );
   }
-  getBookImage(bookIsbn: Book) {
-    return this.books.filter(book => book.id === bookIsbn)[0].img;
-  }
+
   goCreateReadingClub() {
     this.router.navigate(['Catalogue/reading-club/create-club']);
   }
@@ -125,18 +125,6 @@ export class ReadingClubComponent implements OnInit{
     this.router.navigate(['home/Catalogue']);
   }
   joinClub(clubId: string) {
-
-
-    // If the user is not in the club, add the user to the club
-    this.bookService.addUserToClub(clubId, this.users[0].id).subscribe(
-      (data: any) => {
-        console.log('Club joined successfully:', data);
-        alert('Club joined successfully');
-      },
-      (error) => {
-        console.error('Error while joining club:', error);
-        alert('Error while joining club');
-      }
-    );
+    alert('Club joined successfully');
   }
 }

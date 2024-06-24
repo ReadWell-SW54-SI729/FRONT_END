@@ -1,55 +1,65 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environments';
-import {HttpClient} from "@angular/common/http";
-import {catchError, EMPTY, switchMap, tap, throwError} from "rxjs";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {catchError, EMPTY, Observable, switchMap, tap, throwError} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class  BookflowService {
   baseUrl: string = "http://localhost:3000/api/v1"; // muetsra todos los libros
+  baseUrl2: string = "https://bookflow-app-api.onrender.com/api/v1"; // muestra los libros por isbn
   constructor(private Http:HttpClient) { }
-  lastId = 9;
 
   getBooks(){
-    return this.Http.get<any>(`http://localhost:8080/api/v1/books`).pipe(
-      tap((response) => console.log('API Response:', response))
+    return this.Http.get<any>(`${this.baseUrl2}/books`).pipe(
+      tap()
     );
   }
 
   getBooksByIsbn(isbn:string){
-
-    return this.Http.get<any>(`${this.baseUrl}/books?bookIsbn=${isbn}`).pipe(
+    return this.Http.get<any>(`${this.baseUrl2}/books?bookId=${isbn}`).pipe(
+      tap()
+    );
+  }
+  getGenres(){
+    return this.Http.get<any>(`${this.baseUrl2}/genres`).pipe(
       tap((response) => console.log('API Response:', response))
     );
   }
-
-  getBooksByGenre(genre: string[]){
-
-      return this.Http.get<any>(`${this.baseUrl}/books?bookGenre=${genre}`).pipe(
+  getGenreByname(name:any){
+    return this.Http.get<any>(`${this.baseUrl2}/genres?genreName=${name}`).pipe(tap((response) => console.log('API Response:', response)));
+  }
+  getBooksByGenre(genre: any){
+      return this.Http.get<any>(`${this.baseUrl2}/books/bookGenre?genreName=${genre}`).pipe(
         tap((response) => console.log('API Response:', response))
       );
   }
 
-  getBooksByName(name:string){
-    return this.Http.get<any>(`${this.baseUrl}/books?bookTitle=${name}`).pipe(
-      tap((response) => console.log('API Response:', response))
+  getBooksByName(name: string): Observable<any> {
+    return this.Http.get<any>(`${this.baseUrl2}/books/bookTitle?bookTitle=${encodeURIComponent(name)}`).pipe(
+      tap(response => console.log('API Response:', response))
     );
   }
 
   getClubs(){
-    return this.Http.get<any>(`${this.baseUrl}/reading-clubs`).pipe(
+    return this.Http.get<any>(`${this.baseUrl2}/literature_clubs`).pipe(
       tap((response) => console.log('API Response:', response))
     );
   }
 
   getUser(){
-    return this.Http.get<any>(`${this.baseUrl}/users`).pipe(
+    return this.Http.get<any>(`${this.baseUrl2}/users`).pipe(
+      tap((response) => console.log('API Response:', response))
+    );
+  }
+  getUserById(userId: any) {
+    return this.Http.get<any>(`${this.baseUrl2}/users?id=${userId}`).pipe(
       tap((response) => console.log('API Response:', response))
     );
   }
   getClubByUserId(userId: any) {
-    return this.Http.get<any>(`${this.baseUrl}/reading-clubs?users=1`).pipe(
+    return this.Http.get<any>(`${this.baseUrl}/literature_clubs?userId=2`).pipe(
       tap((response) => console.log('API Response of ClubByUserId:', response))
     );
 
@@ -61,15 +71,21 @@ export class  BookflowService {
       tap((response) => console.log('API Response:', response))
     );
   }
-  createClub(clubName: string, description: string, meetingDate: string, chosenBook: string) {
+  createClub(clubName: string, description: string, meetingDate: string, chosenBook: any) {
+
     const clubData = {
-      id: (++this.lastId).toString(),
-      name: clubName,
+      clubName: clubName,
       meetingDate: meetingDate,
-      description: description,
-      bookIsbn: chosenBook
+      bookId: chosenBook,
+      clubDescription: description,
+      userId: null
     };
-    return this.Http.post<any>(`${this.baseUrl}/reading-clubs`, clubData).pipe(
+    return this.Http.post<any>(`${this.baseUrl2}/literature_clubs`, clubData).pipe(
+      tap((response) => console.log('Club created:', response))
+    );
+  }
+  PublishComment(content:string){
+    return this.Http.post<any>(`${this.baseUrl2}/comments`, {content}).pipe(
       tap((response) => console.log('Club created:', response))
     );
   }

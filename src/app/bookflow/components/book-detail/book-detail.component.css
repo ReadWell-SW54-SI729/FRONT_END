@@ -159,3 +159,43 @@
 .bookmark-button.marked:hover {
   background-color: #c53525; /* Rojo oscuro */
 }
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Permite redimensionar verticalmente */
+}
+
+.comment-form button {
+  min-width: 100px;
+  margin-top: 10px;
+}
+
+.comment-list {
+  margin-top: 20px;
+}
+
+.comment-list h3 {
+  font-size: 1.5rem;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.comment-item {
+  background-color: #f0f0f0;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.comment-item p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555555;
+}

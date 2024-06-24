@@ -12,7 +12,7 @@ import {MatButton} from "@angular/material/button";
 export class AuthenticationSectionComponentComponent {
   currentUserName: string = '';
   isSignedIn: boolean = false;
-  constructor(private router: Router, private authenticationService: AuthenticationService) {
+  constructor(private router: Router, protected authenticationService: AuthenticationService) {
     this.authenticationService.currentUsername.subscribe((username) => this.currentUserName = username);
     this.authenticationService.isSignedIn.subscribe((isSignedIn) => this.isSignedIn = isSignedIn);
   }

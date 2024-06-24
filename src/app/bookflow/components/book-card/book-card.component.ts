@@ -27,19 +27,19 @@ import {MatOption, MatSelect} from "@angular/material/select";
 export class BookCardComponent implements OnInit{
   bookData: Book;
   books: Book[] = [];
-  genres: { name: string, count: number }[] = [
-    { name: 'Legal Thriller', count: 0 },
-    { name: 'Historical Fiction', count: 0 },
-    { name: 'Fantasy', count: 0 },
-    { name: 'Mystery', count: 0 },
-    { name: 'Romance', count: 0 },
-    { name: 'Fiction', count: 0 },
-    { name: 'Nonfiction', count: 0 },
-    { name: 'Biography', count: 0 },
-    { name: 'History', count: 0 },
-    { name: 'Psychology', count: 0 },
-    { name: 'Health', count: 0 },
-    { name: 'True Crime', count: 0 },
+  genres: { id:any,name: any, count: number }[] = [
+    { id:1,name: 'Legal Thriller', count: 0 },
+    { id:2,name: 'Historical Fiction', count: 0 },
+    { id:3,name: 'Fantasy', count: 0 },
+    { id:4,name: 'Mystery', count: 0 },
+    { id:5,name: 'Romance', count: 0 },
+    { id:6,name: 'Fiction', count: 0 },
+    { id:7,name: 'Nonfiction', count: 0 },
+    { id:8,name: 'Biography', count: 0 },
+    { id:9,name: 'History', count: 0 },
+    { id:10,name: 'Psychology', count: 0 },
+    { id:11,name: 'Health', count: 0 },
+    { id:12,name: 'True Crime', count: 0 },
   ];
   selectedGenres: string[] = [];
 
@@ -48,7 +48,7 @@ export class BookCardComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.getBooks();
+    this.getGenres();
   }
 
   getBooks() {
@@ -79,11 +79,34 @@ export class BookCardComponent implements OnInit{
     );
   }
 
+  getGenres() {
+    this.bookService.getGenres().subscribe(
+      (data: any[]) => {
+        if (data && data.length > 0) {
+          this.genres = data.map((genre: any) => {
+            return {
+              id: genre.genreId,
+              name: genre.Name,
+              count: 0
+            };
+          });
+          this.getBooks(); // Llamar a getBooks después de cargar los géneros
+        } else {
+          console.error('No genre data found in the response.');
+        }
+      },
+      (error) => {
+        console.error('Error retrieving genres:', error);
+      }
+    );
+  }
+
   updateGenreCounts() {
     this.genres.forEach(genre => {
-      genre.count = this.books.filter(book => book.genre === genre.name).length;
+      genre.count = this.books.filter(book => book.id === genre.id).length;
     });
   }
+
 
   getDetails(book: any) {
     console.log('Book details:', book.id);
@@ -99,17 +122,18 @@ export class BookCardComponent implements OnInit{
           if (data && data.length > 0) {
             this.books = data.map((book: any) => {
               return new Book(
-                book.bookIsbn,
+                book.bookId,
                 book.bookTitle,
-                book.bookGenre,
+                book.bookGenreId,
                 book.bookImage,
                 book.bookDescription,
                 book.bookAuthor,
                 book.bookAuthorImage,
                 book.bookPublisher,
-                book.amazonBookUrl
+                book.bookRank
               );
             });
+            this.updateGenreCounts();
           } else {
             console.error('No book data found.');
           }
@@ -127,17 +151,19 @@ export class BookCardComponent implements OnInit{
         if (data && data.length > 0) {
           this.books = data.map((book: any) => {
             return new Book(
-              book.bookIsbn,
+              book.bookId,
               book.bookTitle,
-              book.bookGenre,
+              book.bookGenreId,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
               book.bookAuthorImage,
               book.bookPublisher,
-              book.amazonBookUrl
+              book.bookRank
             );
           });
+          this.updateGenreCounts();
+          console.log('Books by name:', this.books);
         } else {
           console.error('No book data found.');
         }
@@ -157,7 +183,7 @@ export class BookCardComponent implements OnInit{
     if (filteredValue === '' || filteredValue === null) {
       this.getBooks();
     } else {
-      this.getBooksByName(inputElement.value);
+      this.getBooksByName(filteredValue);
     }
   }
 
@@ -171,5 +197,9 @@ export class BookCardComponent implements OnInit{
 
   goReadingClub() {
     this.router.navigateByUrl(`Catalogue/reading-club`);
+  }
+
+  goSuscription() {
+    this.router.navigateByUrl(`home/subscription`);
   }
 }

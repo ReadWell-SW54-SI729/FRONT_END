@@ -1,17 +1,17 @@
 export class ReadingClub {
-  id: any;
-  name:any;
+  clubId: any;
+  clubName:any;
   meetingDate:any;
-  bookIsbn:any;
-  description:any;
-  users: any[]= [] ;
+  bookId:any;
+  clubDescription:any;
+  userId: any[]= [] ;
 
-  constructor(id:any,name:any,meetingDate:any, bookIsbn:any, description:any, users:any) {
-    this.id=id;
-    this.name = name;
+  constructor(clubId:any, clubName:any, meetingDate:any, bookId:any, clubDescription:any, userId:any[] ) {
+    this.clubId=clubId;
+    this.clubName = clubName;
     this.meetingDate = meetingDate;
-    this.bookIsbn = bookIsbn;
-    this.description = description;
-    this.users = users;
+    this.bookId = bookId;
+    this.clubDescription = clubDescription;
+    this.userId = userId;
   }
 }

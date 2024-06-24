@@ -72,7 +72,7 @@ export class AuthenticationService {
           this.signedInUsername.next(response.email);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.email} with token ${response.token}`);
-          this.router.navigate(['/']).then();
+          this.router.navigate(['home/Catalogue']).then();
         },
         error: (error) => {
           this.signedIn.next(false);

@@ -18,7 +18,7 @@ import { BookSubscriptionComponent } from './bookflow/components/book-subscripti
 import { PaymentDetailsComponent } from './bookflow/components/payment-details/payment-details.component';
 import {SignInComponentComponent} from "./iam/pages/sign-in/sign-in.component/sign-in.component.component";
 import {SignUpComponentComponent} from "./iam/pages/sign-up/sign-up.component/sign-up.component.component";
-
+import {AuthenticationSectionComponentComponent} from "./iam/components/authentication-section.component/authentication-section.component.component";
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
   {path : 'home/Catalogue', component: BookCardComponent},

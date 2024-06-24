@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {BaseFormComponent} from "../../../../shared/components/base-form.component";
 import {AuthenticationService} from "../../../services/authentication.service";
 import {SignUpRequest} from "../../../model/sign-up.request";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-up.component',
@@ -14,14 +15,14 @@ export class SignUpComponentComponent extends BaseFormComponent implements OnIni
   form!: FormGroup;
   submitted= false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService){
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private router: Router){
     super();
   }
 
   ngOnInit(): void {
     this.form = this.builder.group({
       username: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     })
   }
 
@@ -32,5 +33,8 @@ export class SignUpComponentComponent extends BaseFormComponent implements OnIni
     const signUpRequest = new SignUpRequest(username, password);
     this.authenticationService.signUp(signUpRequest);
     this.submitted = true;
+  }
+  goToSignIn(): void {
+    this.router.navigate(['/sign-in']); // Redirige a la pantalla de inicio de sesión
   }
 }

@@ -3,6 +3,7 @@ import {BaseFormComponent} from "../../../../shared/components/base-form.compone
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {AuthenticationService} from "../../../services/authentication.service";
 import {SignInRequest} from "../../../model/sign-in.request";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in.component',
@@ -13,7 +14,7 @@ export class SignInComponentComponent extends BaseFormComponent implements OnIni
   form!: FormGroup;
   submitted=false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService){
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private router: Router){
     super();
   }
 
@@ -31,5 +32,9 @@ export class SignInComponentComponent extends BaseFormComponent implements OnIni
     const signInRequest= new SignInRequest(username, password);
     this.authenticationService.signIn(signInRequest);
     this.submitted=true;
+  }
+
+  goToSignUp() {
+    this.router.navigate(['/sign-up']); // Redirige a la pantalla de registro
   }
 }

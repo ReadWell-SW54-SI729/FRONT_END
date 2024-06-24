@@ -1,0 +1,85 @@
+.sign-up-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ajustar al 100% del contenedor padre */
+  height: 80vh;
+  padding: 20px;
+}
+mat-card {
+  width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+  background-color: #f4f4f4; /* Fondo suave para el card */
+}
+
+mat-card-header {
+  text-align: center;
+  background-color: #ff9800; /* Naranja */
+  color: #ffffff; /* Texto blanco */
+  border-radius: 10px 10px 0 0;
+  padding: 15px;
+  margin: -20px -20px 20px -20px; /* Alinear el encabezado con el borde del card */
+}
+
+mat-card-title {
+  font-size: 1.75em;
+  font-weight: bold;
+}
+
+mat-card-content {
+  padding: 0 20px 20px 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+input[matInput] {
+  background-color: #ffffff; /* Blanco para el campo de entrada */
+  padding: 10px;
+  border: 1px solid #ccc; /* Color de borde más claro */
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+input[matInput]:focus {
+  border-color: #ff9800; /* Naranja al enfocarse */
+}
+
+mat-error {
+  color: #f44336; /* Rojo para los errores */
+  font-size: 0.875em;
+}
+
+button[mat-raised-button] {
+  width: 100%;
+  margin-bottom: 10px; /* Espacio entre botones */
+  background-color: #ffeb3b; /* Amarillo */
+  color: #000000; /* Texto negro */
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #fdd835; /* Amarillo más oscuro al pasar el ratón */
+}
+
+@media (max-width: 600px) {
+  mat-card {
+    padding: 10px;
+  }
+
+  mat-card-header {
+    padding: 10px;
+    margin: -10px -10px 15px -10px; /* Ajustar márgenes en pantallas pequeñas */
+  }
+
+  mat-card-content {
+    padding: 10px;
+  }
+}

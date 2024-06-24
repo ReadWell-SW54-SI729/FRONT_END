@@ -40,15 +40,15 @@ export class BookHomeComponent implements OnInit {
           // Transforma los datos del servicio en objetos Book y guarda solo los primeros tres libros
           this.libros = data.slice(0, 3).map((book: any) => {
             return new Book(
-              book.bookIsbn,
+              book.bookId,
               book.bookTitle,
-              book.bookGenre,
+              book.bookGenreId,
               book.bookImage,
               book.bookDescription,
               book.bookAuthor,
               book.bookAuthorImage,
               book.bookPublisher,
-              book.amazonBookUrl
+              book.bookRank
             );
           });
           console.log(this.libros); // Agregar esta línea para imprimir los libros en la consola

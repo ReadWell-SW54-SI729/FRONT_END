@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MatCardModule} from "@angular/material/card";
 import {MatFormField} from "@angular/material/form-field";
 import { BookflowService } from '../../services/bookflow-service.service';
@@ -7,9 +7,9 @@ import {MatButton} from "@angular/material/button";
 import {MatInput} from "@angular/material/input";
 import {MatLabel} from "@angular/material/form-field";
 import {Router} from "@angular/router";
-import {BookDialogComponent} from "../book-dialog/book-dialog.component";
-import {MatDialog} from "@angular/material/dialog";
-import {NgIf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
+import {MatOption, MatSelect} from "@angular/material/select";
+import {Book} from "../../model/book.model";
 
 @Component({
   selector: 'app-book-create-reding-club',
@@ -21,42 +21,82 @@ import {NgIf} from "@angular/common";
     MatButton,
     MatInput,
     MatLabel,
-    NgIf
+    NgIf,
+    MatSelect,
+    MatOption,
+    NgForOf
   ],
   templateUrl: './book-create-reding-club.component.html',
   styleUrl: './book-create-reding-club.component.css'
 })
-export class BookCreateRedingClubComponent {
+export class BookCreateRedingClubComponent implements OnInit{
+
   clubName: string = '';
   description: string = '';
   meetingDate: string = '';
   chosenBook: string = '';
-  chosenBookImage: string = '';
+  books: Book[] = [];
 
-  constructor(private bookService: BookflowService, public dialog: MatDialog, private router:Router) {}
+  constructor(private bookService: BookflowService, private router: Router) {}
+
+  ngOnInit() {
+    this.getAllBooks();
+  }
+
+  getAllBooks() {
+    this.bookService.getBooks().subscribe(
+      (data: any[]) => {
+        if (data && data.length > 0) {
+          this.books = data.map((book: any) => {
+            return new Book(
+              book.bookId,
+              book.bookTitle,
+              book.bookGenreId,
+              book.bookImage,
+              book.bookDescription,
+              book.bookAuthor,
+              book.bookAuthorImage,
+              book.bookPublisher,
+              book.bookRank
+            );
+          });
+          console.log('Books loaded:', this.books);
+        } else {
+          console.error('No books data found.');
+        }
+      },
+      (error) => {
+        console.error('Error retrieving books:', error);
+      }
+    );
+  }
 
   createClub() {
-    // Verificar si se ha seleccionado un libro
     if (!this.chosenBook) {
+      alert('Por favor selecciona un libro.');
       return;
     }
 
-    // Verificar que todos los campos estén llenos antes de crear el club
     if (this.clubName && this.description && this.meetingDate) {
       this.bookService.createClub(this.clubName, this.description, this.meetingDate, this.chosenBook).subscribe(
         (data: any) => {
           console.log('Club created successfully:', data);
-          alert('Club created successfully');
+          alert('Club creado exitosamente');
           this.resetForm();
         },
         (error) => {
           console.error('Error while creating club:', error);
-          alert('Error while creating club');
+          alert('Error al crear el club');
         }
       );
     } else {
-      alert('Por favor complete todos los campos antes de crear el club.');
+      alert('Por favor completa todos los campos antes de crear el club.');
     }
+  }
+
+  getSelectedBookImage(): string {
+    const selectedBook = this.books.find(b => b.id === this.chosenBook);
+    return selectedBook ? selectedBook.img : '';
   }
 
   resetForm() {
@@ -64,33 +104,9 @@ export class BookCreateRedingClubComponent {
     this.description = '';
     this.meetingDate = '';
     this.chosenBook = '';
-    this.chosenBookImage = '';
-  }
-
-  openBookDialog() {
-    // Verificar si ya se ha seleccionado un libro
-    if (this.chosenBook) {
-      // Si ya se ha seleccionado un libro, no es necesario abrir la ventana de diálogo nuevamente
-      return;
-    }
-
-    // Abrir la ventana de diálogo para seleccionar un libro
-    const dialogRef = this.dialog.open(BookDialogComponent, {
-      width: '40%',
-      height: '80%'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        // Si se selecciona un libro, actualizar la información del libro seleccionado
-        this.chosenBook = result.bookIsbn;
-        this.chosenBookImage = result.bookImage;
-      }
-    });
   }
 
   goBack() {
     this.router.navigate(['Catalogue/reading-club']);
   }
-
 }

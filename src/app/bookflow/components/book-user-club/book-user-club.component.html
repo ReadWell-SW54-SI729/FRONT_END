@@ -1,11 +1,11 @@
 <div class="books-container" aria-labelledby="Page">
   <mat-card *ngFor="let club of clubs" class="book-card" role="article" aria-labelledby="book-title">
     <mat-card-header>
-      <mat-card-title>{{ club.name }}</mat-card-title>
+      <mat-card-title>{{ club.clubName }}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image [src]="getBookImage(club.bookIsbn)" alt="Imagen del libro" role="img" aria-label="book image">
+    <img mat-card-image [src]="getBookImage(club.clubId)" alt="Imagen del libro" role="img" aria-label="book image">
     <mat-card-content>
-      <p><strong>Description:</strong><br> {{club.description}}</p>
+      <p><strong>Description:</strong><br> {{club.clubDescription}}</p>
       <p><strong>Meeting Date:</strong><br> {{club.meetingDate}}</p>
     </mat-card-content>
 

@@ -72,7 +72,7 @@ export class BookUserClubComponent implements OnInit{
     );
   }
   getClubs() {
-    const userId = 1;
+    const userId = 2;
     this.bookService.getClubByUserId(userId).subscribe(
       (data: any[]) => {
         if (data && data.length > 0) {
@@ -103,12 +103,8 @@ export class BookUserClubComponent implements OnInit{
           this.users = data.map((user: any) => {
             return new User(
               user.id,
-              user.firstName,
-              user.lastName,
-              user.age,
-              user.email,
-              user.description,
-              user.bookFavorites
+              user.username,
+              user.role
             );
           });
         }

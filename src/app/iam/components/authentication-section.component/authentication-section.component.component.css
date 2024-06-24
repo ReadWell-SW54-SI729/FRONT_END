@@ -1,0 +1,29 @@
+.authentication-section {
+  display: flex;
+  align-items: center;
+}
+
+.authenticated-content, .anonymous-content {
+  display: flex;
+  gap: 10px; /* Espacio entre elementos */
+  align-items: center;
+}
+
+.welcome-message {
+  font-size: 1.2em;
+}
+
+.mat-button {
+  font-size: 1em;
+  padding: 8px 16px;
+}
+
+.sign-out-button {
+  background-color: #f44336; /* Color de fondo para botón de cerrar sesión */
+  color: white;
+}
+
+.sign-in-button, .sign-up-button {
+  background-color: #2196f3; /* Color de fondo para botones de inicio de sesión y registro */
+  color: white;
+}
