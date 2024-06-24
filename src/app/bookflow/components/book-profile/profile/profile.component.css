@@ -125,20 +125,18 @@ h2 {
   margin-top: 20px;
 }
 
-.submit-button a, .submit-button button {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 1em;
-  border: none;
-  background-color: #f18900; /* Naranja brillante */
-  color: #fff; /* Blanco para el texto */
-  border-radius: 8px; /* Bordes suaves */
+button {
+  background-color: #ff9800;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-decoration: none; /* Sin subrayado en enlaces */
-  margin: 10px; /* Espaciado entre botones */
+  font-weight: bold;
+  text-align: center;
+  border: none;
+  display: inline-block;
 }
 
-.submit-button a:hover, .submit-button button:hover {
+button:hover {
   background-color: #e68900; /* Naranja oscuro en hover */
 }
