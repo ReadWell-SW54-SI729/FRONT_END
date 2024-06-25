@@ -29,23 +29,23 @@ export class RecommendFriendsComponent implements OnInit{
       }
     });
   }
-  getBooksByIsbn(isbn: string) {
+  getBooksByIsbn(isbn: any) {
     this.bookService.getBooksByIsbn(isbn).subscribe(
       (data: any) => {
         if (data) {
           console.log('Book data:', data);
           this.bookData = new Book(
-            data[0].bookIsbn,
-            data[0].bookTitle,
-            data[0].bookGenre,
-            data[0].bookImage,
-            data[0].bookDescription,
-            data[0].bookAuthor,
-            data[0].bookAuthorImage,
-            data[0].bookPublisher,
-            data[0].amazonBookUrl
+            data[isbn-1].bookIsbn,
+            data[isbn-1].bookTitle,
+            data[isbn-1].bookGenre,
+            data[isbn-1].bookImage,
+            data[isbn-1].bookDescription,
+            data[isbn-1].bookAuthor,
+            data[isbn-1].bookAuthorImage,
+            data[isbn-1].bookPublisher,
+            data[isbn-1].amazonBookUrl
           );
-          let name = data[0].bookTitle;
+          let name = data[isbn-1].bookTitle;
           console.log('Book details:', this.bookData);
         } else {
           console.error('No book data found for ISBN:', isbn);
