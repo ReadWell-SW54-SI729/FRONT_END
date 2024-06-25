@@ -8,7 +8,7 @@
       <!-- Detalles del libro -->
       <mat-card-content class="book-details">
         <h2 mat-card-title>{{ bookData.name }}</h2>
-        <p class="book-genre">Género: {{ bookData.genre }}</p>
+        <p class="book-genre">Género: {{ bookData.genre.Name }}</p>
         <p class="book-description">{{ bookData.description }}</p>
         <p class="book-author">Autor: {{ bookData.author }}</p>
         <img mat-card-image [src]="bookData.authorImage" alt="{{ bookData.author }}" class="author-image" />
