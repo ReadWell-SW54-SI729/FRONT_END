@@ -55,11 +55,11 @@ export class BookDetailComponent implements OnInit {
     });
   }
 
-  getBooksByIsbn(isbn: string): void {
+  getBooksByIsbn(isbn: any): void {
     this.bookService.getBooksByIsbn(isbn).subscribe(
       (data: any) => {
         if (data && data.length > 0) {
-          const book = data[0]; // Assuming data is an array of books
+          const book = data[isbn-1]; // Assuming data is an array of books
           this.bookData = new Book(
             book.bookId,
             book.bookTitle,
@@ -86,9 +86,9 @@ export class BookDetailComponent implements OnInit {
       (data: any[]) => {
         if (data && data.length > 0) {
           this.userData = new User(
-            data[0].id,
-            data[0].username,
-            data[0].role
+            data[1].id,
+            data[1].username,
+            data[1].role
           );
         }
       },
