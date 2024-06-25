@@ -22,7 +22,13 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
+              }
+
             ],
             "styles": [
               "@angular/material/prebuilt-themes/indigo-pink.css",
@@ -41,7 +47,7 @@
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "8kb",
-                  "maximumError": "10kb"
+                  "maximumError": "15kb"
                 }
               ],
               "outputHashing": "all"

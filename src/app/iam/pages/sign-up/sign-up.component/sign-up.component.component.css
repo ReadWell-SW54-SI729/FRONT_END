@@ -1,0 +1,74 @@
+.container {
+  width: 90%;
+  max-width: 400px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 100px auto 0;
+  margin-block: 100px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+.orange-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  background-color: #f18900;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.orange-button:hover {
+  background-color: #b36200;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 576px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 50%;
+  }
+}

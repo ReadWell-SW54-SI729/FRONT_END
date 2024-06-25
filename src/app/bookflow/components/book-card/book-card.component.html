@@ -8,13 +8,14 @@
     <button mat-button class="orange-button" (click)="goAuthors()">Autores</button>
     <button mat-button class="orange-button" (click)="goLectures()">Mi Lista</button>
     <button mat-button class="orange-button" (click)="goReadingClub()">Clubs de Lectura</button>
+    <button mat-button class="orange-button" (click)="goSuscription()">Suscripciones</button>
   </div>
   <div class="buscar-filtros">
     <mat-form-field appearance="fill">
       <mat-label>Seleccionar Géneros</mat-label>
       <mat-select multiple [(value)]="selectedGenres" (selectionChange)="filterBooks()">
         <mat-option *ngFor="let genre of genres" [value]="genre.name">
-          {{ genre.name }} ({{ genre.count }})
+          {{ genre.name }}
         </mat-option>
       </mat-select>
     </mat-form-field>

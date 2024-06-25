@@ -1,22 +1,18 @@
 
 <div class="container-wrapper">
-<div class = "comment-information">
-  <div class = "comment-info-content">
-    <div class = "comment-text">
-      <h2 class="comment-info">Comentarios y reseñas</h2>
-      <label class="book">Título</label>
+  <div class = "comment-information">
+    <div class = "comment-info-content">
+      <div class = "comment-text">
+        <h2 class="comment-info">Comentarios y reseñas</h2>
+      </div>
+      <div class = "bars">
+        <label class="review">Comentario</label>
+        <input type="review-bar" id="Reseña" name="Reseña" placeholder="Escriba su comentario ..."
+               style="background-color: whitesmoke;">
+      </div>
+      <button class = "icon-button" (click)="enviarMensaje()">
+        <p>Enviar</p>
+      </button>
     </div>
-    <div class = "bars">
-      <input type="book-bar" id="Título" name="Título" placeholder="Escriba el nombre del libro o audiolibro ..."
-             style="background-color: whitesmoke;">
-      <label class="review">Comentario</label>
-      <input type="review-bar" id="Reseña" name="Reseña" placeholder="Escriba su comentario ..."
-             style="background-color: whitesmoke;">
-    </div>
-    <button class = "icon-button" (click)="enviarMensaje()">
-      <p>Enviar</p>
-    </button>
   </div>
 </div>
-</div>
-

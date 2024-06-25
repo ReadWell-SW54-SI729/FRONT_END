@@ -1,4 +1,6 @@
 export const environment = {
-  production: false,
+  /*
+  roduction: false,
   baseUrl: 'http://localhost:3000/api/v1'
+   */
 }

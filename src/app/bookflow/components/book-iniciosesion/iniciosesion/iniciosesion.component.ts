@@ -1,43 +1,44 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
-import { Router } from '@angular/router'; // Importa Router
-
-
-
+import { Router } from '@angular/router';
+import {MatCard} from "@angular/material/card"; // Importa Router
+import {BaseFormComponent} from "../../../../shared/components/base-form.component";
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
+import {SignInRequest} from "../../../../iam/model/sign-in.request";
+import {MatError} from "@angular/material/form-field";
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-iniciosesion',
   standalone: true,
   imports: [CommonModule,
-    ReactiveFormsModule],
+    ReactiveFormsModule, MatCard, MatError, MatButton],
   templateUrl: './iniciosesion.component.html',
   styleUrl: './iniciosesion.component.css'
 })
-export class IniciosesionComponent {
-  loginForm: FormGroup; // Definir un FormGroup para el formulario
-  loginSuccess: boolean = false;
+export class IniciosesionComponent extends BaseFormComponent implements OnInit{
+  form!: FormGroup;
+  submitted=false;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) { // Inyectar Router en el constructor
-    this.loginForm = this.formBuilder.group({ // Configurar el formulario y sus validaciones
-      username: ['', Validators.required], // Campo de usuario requerido
-      password: ['', Validators.required] // Campo de contraseña requerido
-    });
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService){
+    super();
   }
 
-  onSubmit() {
-    if (this.loginForm.valid) { // Verificar si el formulario es válido antes de enviarlo
-      console.log('Formulario válido. Iniciando sesión:', this.loginForm.value.username);
-      this.loginSuccess = true; // Marcar la sesión como exitosa
+  ngOnInit(): void {
+    this.form= this.builder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    })
+  }
 
-      setTimeout(() => {
-        console.log('Redirigiendo a la página de inicio...');
-        this.router.navigate(['/home/Catalogue']); // Redirecciona a home/Catalogue después de 2 segundos
-      }, 2000);
-    } else {
-      console.log('Formulario inválido. Por favor, complete todos los campos.');
-    }
+  onSubmit(){
+    if(this.form.invalid) return;
+    let email= this.form.value.email;
+    let password= this.form.value.password;
+    const signInRequest= new SignInRequest(email, password);
+    this.authenticationService.signIn(signInRequest);
+    this.submitted=true;
   }
 }

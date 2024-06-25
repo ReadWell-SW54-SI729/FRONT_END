@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { BookflowServiceService } from './bookflow-service.service';
+import { BookflowService } from './bookflow-service.service';
 
 describe('BookflowServiceService', () => {
-  let service: BookflowServiceService;
+  let service: BookflowService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(BookflowServiceService);
+    service = TestBed.inject(BookflowService);
   });
 
   it('should be created', () => {

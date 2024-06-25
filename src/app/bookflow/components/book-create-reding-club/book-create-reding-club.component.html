@@ -17,17 +17,22 @@
           <mat-label>Fecha de inicio</mat-label>
           <input matInput name="meetingDate" [(ngModel)]="meetingDate" type="date" required>
         </mat-form-field>
-        <div class="book-selection">
-          <button mat-raised-button color="primary" (click)="openBookDialog()">Seleccionar Libro</button>
-        </div>
-        <div *ngIf="chosenBookImage" class="book-image">
-          <img [src]="chosenBookImage" alt="Imagen del libro">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Seleccionar Libro</mat-label>
+          <mat-select name="chosenBook" [(ngModel)]="chosenBook" required>
+            <mat-option *ngFor="let book of books" [value]="book.id">
+              {{ book.name }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <div class="book-image" *ngIf="chosenBook">
+          <img [src]="getSelectedBookImage()" alt="Imagen del libro seleccionado">
         </div>
         <div class="button-container">
-          <button mat-raised-button color="primary" type="submit" [disabled]="!chosenBook || clubForm.invalid">Crear Club</button>
+          <button mat-raised-button color="primary" type="submit">Crear Club</button>
         </div>
         <div class="button-container2">
-          <button mat-raised-button color="primary" type="submit" (click)="goBack()">Back</button>
+          <button mat-raised-button color="primary" type="button" (click)="goBack()">Back</button>
         </div>
       </form>
     </mat-card-content>

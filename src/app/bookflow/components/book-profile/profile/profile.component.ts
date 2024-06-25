@@ -11,8 +11,9 @@ import {User} from "../../../model/user.model";
 import {MatTab, MatTabGroup} from "@angular/material/tabs";
 import {MatList, MatListItem} from "@angular/material/list";
 import {BookflowService} from "../../../services/bookflow-service.service";
-import {Router} from "@angular/router";
-import {NgForOf} from "@angular/common";
+import {AsyncPipe, NgForOf, NgIf} from "@angular/common";
+import {AuthenticationService} from "../../../../iam/services/authentication.service";
+import {Book} from "../../../model/book.model";
 
 @Component({
   selector: 'app-profile',
@@ -32,52 +33,47 @@ import {NgForOf} from "@angular/common";
     MatIcon,
     MatIconButton,
     MatCardContent,
-    NgForOf
+    NgForOf,
+    AsyncPipe,
+    NgIf
   ],
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit{
-  userData: User;
-  users:User[] = [];
-  constructor(private bookService: BookflowService,private router: Router) {
-    this.userData = {} as User;
+  currentid: any = '';
+  user : User;
+  id=1;
+  constructor(private authenticationService: AuthenticationService, private bookflowService : BookflowService) {
+    this.user = {} as User;
   }
-  loginForm = new FormGroup({
-    email: new FormControl(''),
-    password: new FormControl(''),
-  });
 
   ngOnInit() {
-    this.getUser();
+    this.authenticationService.currentUserId.subscribe((id) => {
+      this.currentid = id;
+      console.log('Current Username:', this.currentid); // Añadir para verificar en consola
+    });
+    this.getUserById();
   }
+  getUserById() {
 
-  getUser() {
-    this.bookService.getUser().subscribe(
-      (data: any[]) => {
+    this.bookflowService.getUserById(this.id).subscribe(
+      (data: any) => {
         if (data && data.length > 0) {
-          this.userData = new User(
-            data[0].id,
-            data[0].firstName,
-            data[0].lastName,
-            data[0].age,
-            data[0].email,
-            data[0].description,
-            data[0].bookFavorites
+          this.user = new User(
+            data[this.id].id,
+            data[this.id].username,
+            data[this.id].role
           );
+        } else {
+          console.error('No books data found in the response.');
         }
+      },
+      (error) => {
+        console.error('Error retrieving books:', error);
       }
     );
   }
-
-
-  goToUserClubs() {
-    return this.router.navigate(['profile/user-club']);
-  }
-  onLogin() {
-    // Handle profile logic here
-  }
-
-  onRegister() {
-    // Handle registration logic here
+  onSignOut() {
+    this.authenticationService.signOut();
   }
 }

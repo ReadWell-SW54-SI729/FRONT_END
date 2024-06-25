@@ -16,12 +16,14 @@ import { BookUserClubComponent } from './bookflow/components/book-user-club/book
 import { RecommendFriendsComponent} from "./bookflow/components/book-recommend/recommend-friends/recommend-friends.component";
 import { BookSubscriptionComponent } from './bookflow/components/book-subscription/book-subscription.component';
 import { PaymentDetailsComponent } from './bookflow/components/payment-details/payment-details.component';
-
+import {SignInComponentComponent} from "./iam/pages/sign-in/sign-in.component/sign-in.component.component";
+import {SignUpComponentComponent} from "./iam/pages/sign-up/sign-up.component/sign-up.component.component";
+import {AuthenticationSectionComponentComponent} from "./iam/components/authentication-section.component/authentication-section.component.component";
 export const routes: Routes = [
   {path : 'home', component: BookHomeComponent},
   {path : 'home/Catalogue', component: BookCardComponent},
-  {path : 'home/iniciosesion', component: IniciosesionComponent},
-  {path : 'home/registro', component: RegistroComponent},
+  {path : 'sign-in', component: SignInComponentComponent},
+  {path : 'sign-up', component: SignUpComponentComponent},
   {path : 'home/profile/editprofile', component: BookEditprofileComponent},
   {path : 'home/tendencia', component: BookTendenciaComponent},
   {path : 'Catalogue/bookDetail/:id', component: BookDetailComponent },

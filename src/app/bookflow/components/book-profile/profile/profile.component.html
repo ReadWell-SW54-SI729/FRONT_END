@@ -2,24 +2,22 @@
   <div class="form-row">
     <div class="form-column">
       <div class="profile-picture">
-        <img src="./assets/imagen-joaquin.png" alt="Foto de perfil">
+        <img src="./assets/imagen-paolo.png" alt="Foto de perfil">
       </div>
-      <h1>{{userData.firstName + ' ' + userData.lastName}}</h1>
     </div>
     <div class="form-column">
-      <p>Age: {{ userData.age }}</p>
-      <p>Email: {{userData.email}}</p>
-      <p>Description: {{userData.description}}</p>
-      <p>Favorites:</p>
-      <div *ngFor="let book of userData.bookFavorites">
-        <a>- {{ book }}</a>
-      </div>
+      <p>Age: 20</p>
+      <p>Email: {{user.username}}</p>
+      <p>Description: I'm a book lover who enjoys reading a wide variety of genres. I'm always looking for new recommendations and love discussing books with fellow readers."</p>
+      <p>Favorites: <br>A CALAMITY OF SOULS",
+        <br>"THE ECHO WIFE",
+        <br>"THE MURDER INN</p>
     </div>
   </div>
   <div class="submit-button">
     <a href="/home/profile/editprofile">
       <button type="button">Editar perfil</button>
     </a>
-    <button type="button" mat-button (click)="goToUserClubs()">Ver clubes</button>
   </div>
+  <button type="button" (click)="onSignOut()">Sign Out</button>
 </div>
